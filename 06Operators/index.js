@@ -1,6 +1,7 @@
 // 77;
 // "Harry bhai"
 // false
+// !true // 1 operator and 1 operand
 console.log("Operators in Js")
 // Arithmetic Operators 
 let a = 10;
