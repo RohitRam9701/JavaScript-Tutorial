@@ -56,6 +56,6 @@ const PI = 3.14159;
 Conclusions are:
 var can be redeclared and updated, while let can only be updated but not redeclared, and const can neither be updated nor redeclared.
 we have to use let and const instead of var.
-we haver to use const most of the time.
+we have to use const most of the time.
 we must think of scope of variables if we are going to use var.
 */
