@@ -131,3 +131,5 @@ input === "Hello" ? console.log("Hello World") : console.log("Goodbye World");
 ```
 # Homework
 Just like if else and ternary operator, you can also use [switch statements](https://www.w3schools.com/js/js_switch.asp). As a homework, explore the switch statement and try to write a program using the switch statement.
+
+[Next lecture](https://replit.com/@codewithharry/08Chapter2PS?v=1)
