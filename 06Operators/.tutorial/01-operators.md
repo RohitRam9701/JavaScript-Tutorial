@@ -183,3 +183,5 @@ In the first console.log() statement, `z > 5` is `true`, so `!(z > 5)` evaluates
 </br>
 </br>
 Phew that was a lot to grasp, if you dindt understand anything, sit back, relax for a while and try to understand it again. we gotta keep our foundations strong.
+
+[Go to next lecture](https://replit.com/@codewithharry/07Conditionals?v=1)
