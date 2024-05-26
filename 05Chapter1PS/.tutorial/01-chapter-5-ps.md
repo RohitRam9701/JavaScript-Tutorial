@@ -86,3 +86,5 @@ const months = {
 ```
 </details> </br>
 Congratulations, you've completed Practice Set 1! If you got everything correct, great job! If not, don't worry - practice makes perfect. Keep practicing and you'll get there.
+
+[Go to next lecture](https://replit.com/@codewithharry/06Operators?v=1#index.js)
