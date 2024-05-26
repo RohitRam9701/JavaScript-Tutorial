@@ -75,3 +75,4 @@ const shubhMarks = {
 ```
 In conclusion, understanding primitive data types and objects is important for writing effective JavaScript code. By using the correct data types, we can improve the efficiency and readability of our code.
 
+[go to next lecture](https://replit.com/@codewithharry/05Chapter1PS?v=1#index.js)
