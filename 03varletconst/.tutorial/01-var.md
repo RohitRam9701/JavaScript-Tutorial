@@ -118,4 +118,4 @@ var name = "Harry"; //bad
 # Conclusion
 Variables are an essential part of JavaScript programming. They allow us to store and manipulate data in our code. In JavaScript, we can declare variables using the `var`, `let`, and `const` keywords. While the `var` keyword has block scope, it can lead to unexpected results and is no longer recommended. Instead, we should use the `let` and `const` keywords, with `const` being the preferred option whenever possible. When declaring variables, we should follow best practices like using descriptive names, using camelCase, declaring variables at the top of their scope, and using `const` by default. By following these practices, we can make our code more readable and maintainable.
 
-[Go to next lecture](nextlectureslink)
+[(nextlectureslink)](https://replit.com/@codewithharry/04primitivesobjects?v=1#index.js)
