@@ -10,7 +10,8 @@ console.log("This repl contains code for the ultimate javascript course video no
 
 /*
  In JavaScript, semicolons are used to terminate statements. While JavaScript allows you to omit semicolons in some cases due to automatic semicolon insertion, it's a good practice to use them consistently to prevent unexpected behavior in your code. Here's where you should use semicolons in JavaScript:
-
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 1. After Statements: Terminate each statement with a semicolon. For example:
    let x = 5;
    console.log(x);
