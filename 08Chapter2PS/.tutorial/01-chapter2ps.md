@@ -108,4 +108,4 @@ In this example, we use the ternary operator to check if the age is greater than
 
 Congratulations! You have completed the practice set. Now you can move on to the next chapter.
 
-[Next Lecture}](https://replit.com/@codewithharry/09forloops?v=1#index.js)
+[Next Lecture](https://replit.com/@codewithharry/09forloops?v=1#index.js)
