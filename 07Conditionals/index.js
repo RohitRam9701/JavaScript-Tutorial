@@ -77,7 +77,9 @@ switch (x) {
     break;
 }
 /*
-let x = Number(prompt("Enter the value of x")); // Number() function to convert the string returned by prompt into number so that my input works well.
+let x = prompt("Enter the value of x");
+x = Number.parseInt(x);
+//Or, let x = Number(prompt("Enter the value of x")); // Number() function to convert the string returned by prompt into number so that my input works well.
 const m = 12, n = 4;
 switch (x) {
   case 1:
