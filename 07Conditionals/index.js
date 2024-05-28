@@ -57,6 +57,26 @@ switch (expr) {
     console.log(`Sorry, we are out of ${expr}.`);
 }
 
+let x = prompt("Enter the value of x");
+const m = 12, n = 4;
+switch (x) {
+  case '1':
+    console.log("Addition", m+n);
+    break;  
+  case '2':
+    console.log("Subtraction", m-n);
+    break;  
+  case '3':
+    console.log("Multiplication", m*n);
+    break;  
+  case '4':
+    console.log("Division", m/n);
+    break;
+  default:
+    console.log("Remainder", m%n);
+    break;
+}
+/*
 let x = Number(prompt("Enter the value of x")); // Number() function to convert the string returned by prompt into number so that my input works well.
 const m = 12, n = 4;
 switch (x) {
@@ -75,4 +95,4 @@ switch (x) {
   default:
     console.log("Remainder", m%n);
     break;
-}
+}*/
