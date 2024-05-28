@@ -74,7 +74,6 @@ switch (x) {
     break;
   default:
     console.log("Remainder", m%n);
-    break;
 }
 /*
 let x = prompt("Enter the value of x");
@@ -96,5 +95,4 @@ switch (x) {
     break;
   default:
     console.log("Remainder", m%n);
-    break;
 }*/
