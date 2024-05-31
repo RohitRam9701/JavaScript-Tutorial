@@ -1,8 +1,6 @@
-<!DOCTYPE html>
+# Here's a great video
 
-Here's a great video:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ER9SspLe4Hg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Watch the video](https://img.youtube.com/vi/ER9SspLe4Hg/0.jpg)](https://www.youtube.com/watch?v=ER9SspLe4Hg)
 
 # Introduction to JavaScript
 Welcome to the world of JavaScript! Today, having a solid understanding of JavaScript is crucial for anyone who wants to pursue a career in web development. With its versatility and wide-range of applications, JavaScript is one of the most important programming languages to learn. But don't worry, we'll start from the basics and gradually raise the bar. By the end of these tutorials, you'll be well on your way to becoming a JavaScript pro.
