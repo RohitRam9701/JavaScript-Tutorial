@@ -14,7 +14,7 @@ let d = undefined;
 {
   let b = 'this'; // Using let inside the block
   console.log(b);
-/* if I use var b = 'this'instead of let b = 'this' as below:
+/* if I use var b = 'this'after/instead of let b = 'this' as below:
   var b = 'this'; 
   The code encounters a syntax error because the variable b is redeclared using var within 
   the same block scope after it has already been declared using let in the outer scope. In 
@@ -28,13 +28,15 @@ var x = "Ram";
 {
   let x = "Shyam"; // Declares x within block scope using let
   console.log(x)
-/*var x = "Shyam";
+  
+  //What happens if I use var x = "Yam" or, "Shyam" after let x = "Shyam" as below:
+  /*var x = "Yam"; // or, var x = "Shyam"; 
   console.log(x)  */ // Error: x redeclaration using var within the same block
   /*
   The use of let in the first code snippet declares x as a block-scoped variable, limiting its 
-  accessibility to the block in which it is defined. This is why the subsequent var x = "Shyam"; 
-  causes an error, as it attempts to redeclare x within the same block, violating the rules of 
-  block scope.
+  accessibility to the block in which it is defined. This is why the subsequent var x = "Yam" or, 
+  "Shyam"; causes an error, as it attempts to redeclare x within the same block, violating the rules 
+  of block scope.
   */
 }
 console.log(x)

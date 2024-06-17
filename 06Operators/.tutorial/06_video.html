@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Operators and Expressions</title>
+        <style>
+            body {
+                background-color: #20263b;
+                font-family: Arial, sans-serif;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color: #ffffff;
+            }
+
+            p {
+                font-family: "Lucida Sans", "Lucida Sans Regular",
+                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+                    sans-serif;
+                font-size: 15px;
+                color: #ffffff;
+            }
+
+            li {
+                color: #ffffff;
+            }
+
+            code {
+                font-size: 15px;
+                color: #26e4d1;
+            }
+
+            .video-container {
+                position: relative;
+                padding-bottom: 56.25%;
+                /* 16:9 aspect ratio */
+                height: 0;
+            }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .pre-container {
+                position: relative;
+                display: inline-block;
+                width: 80%;
+                margin-bottom: 1rem;
+                background-color: #2a3c56;
+                border-radius: 5px;
+                padding: 1rem 1.5rem 1rem 1rem;
+                /* Add right padding to create space for the button */
+                color: #f8f8f2;
+                font-size: 1rem;
+            }
+
+            pre {
+                margin: 0;
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .copy-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background-color: #444;
+                border: none;
+                border-radius: 5px;
+                padding: 2px 5px;
+                cursor: pointer;
+                color: #f8f8f2;
+                font-size: 0.9rem;
+                transition: background-color 0.3s ease;
+            }
+
+            .copy-btn:hover {
+                background-color: #50fa7b;
+                color: #282a36;
+            }
+
+            .copy-btn:active {
+                background-color: #28a745;
+            }
+
+            .copy-btn::after {
+                content: "\2702";
+            }
+
+            table {
+                width: 100%;
+                color: #ffffff;
+                border-collapse: collapse; /* To ensure borders collapse properly */
+            }
+
+            th,
+            td {
+                border: 1px solid #ffffff; /* Add border to cells */
+                padding: 8px; /* Add padding for better spacing */
+                text-align: center;
+            }
+
+            tr:nth-child(even) {
+                background-color: #2a3c56; /* Apply background color to even rows */
+            }
+
+            tr:nth-child(odd) {
+                background-color: #20263b; /* Apply background color to odd rows */
+            }
+        </style>
+    </head>
+    <body>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/lsV8JQgSW1s"></iframe>
+        </div>
+            <br />
+        <div>
+            <h1 align="center">Operators and Expressions</h1>
+            <hr />
+
+            <p>
+                In JavaScript, an expression is a combination of values,
+                variables, and operators that can be evaluated to produce a
+                result. An expression can be as simple as a single variable, or
+                it can be complex, involving many different parts. For example,
+                the expression <code>29</code> is a valid JavaScript expression,
+                as is <code>a + b * 3</code>, which involves two variables
+                (<code>a</code> and <code>b</code>), a constant
+                (<code>3</code>), and two operators (<code>+</code> and
+                <code>*</code>).
+            </p>
+
+            <p>
+                In programming, we often use operators in our computations. An
+                operator is a symbol that tells JavaScript to perform a certain
+                mathematical or logical operation. For example, when we write
+                <code>20 + 9</code>, <code>20</code> and <code>9</code> are our
+                operands, and <code>+</code> is our operator, and
+                <code>29</code> is our result. It's not always the case that we
+                have one operator and two operands. For example, if we have
+                <code>!true</code>, we have one operator (<code>!</code>), one
+                operand (<code>true</code>), and <code>false</code> is our
+                result.
+            </p>
+
+            <h1>Arithmetic Operators</h1>
+            <hr />
+            <p>
+                Arithmetic operators are used to perform mathematical
+                calculations. Here are the most common arithmetic operators in
+                JavaScript:
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>+</code></td>
+                        <td>Addition</td>
+                        <td><code>3 + 5</code> evaluates to <code>8</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>-</code></td>
+                        <td>Subtraction</td>
+                        <td><code>7 - 2</code> evaluates to <code>5</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>*</code></td>
+                        <td>Multiplication</td>
+                        <td><code>4 * 6</code> evaluates to <code>24</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/</code></td>
+                        <td>Division</td>
+                        <td><code>12 / 4</code> evaluates to <code>3</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>%</code></td>
+                        <td>Modulus</td>
+                        <td><code>10 % 3</code> evaluates to <code>1</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>**</code></td>
+                        <td>Exponentiation</td>
+                        <td><code>2 ** 3</code> evaluates to <code>8</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                In the above table, the first column represents the operator
+                symbol, the second column describes what it does, and the third
+                column provides an example of its usage. Here are some examples
+                of arithmetic operators in action:
+            </p>
+
+            <div class="pre-container">
+                <button
+                    class="copy-btn"
+                    onclick="copyToClipboard(this)"
+                ></button>
+                <pre><code>
+let a = 5;
+let b = 3;
+
+// Addition
+let c = a + b; // c is now 8
+
+// Subtraction
+let d = a - b; // d is now 2
+
+// Multiplication
+let e = a * b; // e is now 15
+
+// Division
+let f = a / b; // f is now 1.6666666666666667
+
+// Modulus
+let g = a % b; // g is now 2
+
+// Exponentiation
+let h = a ** b; // h is now 125</code></pre>
+            </div>
+
+            <p>
+                In the case of the <strong>modulus</strong> operator
+                (<code>%</code>), it returns the remainder after division. For
+                example, <code>10 % 3</code> evaluates to <code>1</code>, since
+                <code>10</code> divided by <code>3</code> leaves a remainder of
+                <code>1</code>.
+            </p>
+
+            <p>
+                The <strong>exponential</strong> operator (<code>**</code>)
+                raises the first operand to the power of the second operand. For
+                example, <code>2 ** 3</code> evaluates to <code>8</code>, since
+                <code>2</code> raised to the power of <code>3</code> is
+                <code>8</code>.
+            </p>
+
+            <p>
+                In addition to the basic arithmetic operators, JavaScript also
+                has some shorthand operators that combine arithmetic with
+                assignment. Here are some examples:
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>+=</code></td>
+                        <td>Addition assignment</td>
+                        <td>
+                            <code>a += b</code> is the same as
+                            <code>a = a + b</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>-=</code></td>
+                        <td>Subtraction assignment</td>
+                        <td>
+                            <code>a -= b</code> is the same as
+                            <code>a = a - b</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>*=</code></td>
+                        <td>Multiplication assignment</td>
+                        <td>
+                            <code>a *= b</code> is the same as
+                            <code>a = a * b</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>/=</code></td>
+                        <td>Division assignment</td>
+                        <td>
+                            <code>a /= b</code> is the same as
+                            <code>a = a / b</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>%=</code></td>
+                        <td>Modulus assignment</td>
+                        <td>
+                            <code>a %= b</code> is the same as
+                            <code>a = a % b</code>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pre-container">
+                <button
+                    class="copy-btn"
+                    onclick="copyToClipboard(this)"
+                ></button>
+                <pre><code>
+let x = 5;
+
+// Addition assignment
+x += 3; // equivalent to x = x + 3
+console.log(x); // Output: 8
+
+// Subtraction assignment
+x -= 2; // equivalent to x = x - 2
+console.log(x); // Output: 6
+
+// Multiplication assignment
+x *= 4; // equivalent to x = x * 4
+console.log(x); // Output: 24
+
+// Division assignment
+x /= 3; // equivalent to x = x / 3
+console.log(x); // Output: 8
+
+// Modulus assignment
+x %= 5; // equivalent to x = x % 5
+console.log(x); // Output: 3</code></pre>
+            </div>
+
+            <p>
+                Before we study comparison operators, here's an important
+                concept to understand,
+                <strong>Post increment and Pre increment</strong>. Have a look
+                at the following code sample:
+            </p>
+
+            <div class="pre-container">
+                <button
+                    class="copy-btn"
+                    onclick="copyToClipboard(this)"
+                ></button>
+                <pre><code>
+let a = 5;
+
+// Post-increment: returns the value of a, then increments it
+console.log(a++); // output: 5
+console.log(a);   // output: 6
+
+// Pre-increment: increments the value of a, then returns it
+console.log(++a); // output: 7
+
+// Post-decrement: returns the value of a, then decrements it
+console.log(a--); // output: 7
+console.log(a);   // output: 6
+
+// Pre-decrement: decrements the value of a, then returns it
+console.log(--a); // output: 5</code></pre>
+            </div>
+
+            <p>
+                In the code above, we first initialize the variable
+                <code>a</code> with the value <code>5</code>. Then we use the
+                post-increment operator (<code>a++</code>) to return the value
+                of <code>a</code> (which is <code>5</code>), and then increment
+                it to <code>6</code>. We log the value of <code>a++</code> to
+                the console and get the output <code>5</code>, and then log the
+                value of <code>a</code> to the console and get the output
+                <code>6</code>.
+            </p>
+
+            <p>
+                Next, we use the pre-increment operator (<code>++a</code>) to
+                increment the value of <code>a</code> to <code>7</code>, and
+                then return its new value. We log the value of
+                <code>++a</code> to the console and get the output
+                <code>7</code>.
+            </p>
+
+            <p>
+                Then, we use the post-decrement operator (<code>a--</code>) to
+                return the value of <code>a</code> (which is <code>7</code>),
+                and then decrement it to <code>6</code>. We log the value of
+                <code>a--</code> to the console and get the output
+                <code>7</code>, and then log the value of <code>a</code> to the
+                console and get the output <code>6</code>.
+            </p>
+
+            <p>
+                Finally, we use the pre-decrement operator (<code>--a</code>) to
+                decrement the value of <code>a</code> to <code>5</code>, and
+                then return its new value. We log the value of
+                <code>--a</code> to the console and get the output
+                <code>5</code>.
+            </p>
+
+            <h1>Comparison Operators</h1>
+            <hr />
+            <p>
+                Comparison operators are used to compare two values and return a
+                Boolean value (<code>true</code> or <code>false</code>)
+                depending on whether the comparison is true or false. Here are
+                the most common comparison operators in JavaScript:
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>==</code></td>
+                        <td>Equal to</td>
+                        <td>
+                            <code>5 == 5</code> evaluates to <code>true</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>===</code></td>
+                        <td>Strict equal to</td>
+                        <td>
+                            <code>5 === "5"</code> evaluates to
+                            <code>false</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>!=</code></td>
+                        <td>Not equal to</td>
+                        <td>
+                            <code>5 != 4</code> evaluates to <code>true</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>!==</code></td>
+                        <td>Strict not equal to</td>
+                        <td>
+                            <code>5 !== "5"</code> evaluates to
+                            <code>true</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>></code></td>
+                        <td>Greater than</td>
+                        <td>
+                            <code>6 > 4</code> evaluates to <code>true</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code><</code></td>
+                        <td>Less than</td>
+                        <td>
+                            <code>6 < 4</code> evaluates to <code>false</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>>=</code></td>
+                        <td>Greater than or equal to</td>
+                        <td>
+                            <code>6 >= 6</code> evaluates to <code>true</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code><=</code></td>
+                        <td>Less than or equal to</td>
+                        <td>
+                            <code>6 <= 4</code> evaluates to <code>false</code>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                The first four operators in the table above compare two values
+                for equality. The double equal sign (<code>==</code>) checks if
+                two values are equal to each other, while the triple equal sign
+                (<code>===</code>) checks if they are strictly equal to each
+                other. The difference between the two is that the double equal
+                sign performs type coercion, meaning that it will convert one
+                value to match the other's type before making the comparison,
+                while the triple equal sign requires both values to be of the
+                same type.
+            </p>
+
+            <p>
+                The <code>!=</code> operator returns true if the values being
+                compared are not equal, while the strictly not equal to operator
+                (<code>!==</code>) returns true if the values are not only
+                different, but also of a different type.
+            </p>
+
+            <p>
+                The last four operators in the table above compare two values to
+                see which is greater, less than, or equal to the other. These
+                operators work on both numbers and strings. When comparing
+                strings, JavaScript compares the characters in the strings based
+                on their Unicode code points.
+            </p>
+
+            <p>Here are some examples of comparison operators in action:</p>
+
+            <div class="pre-container">
+                <button
+                    class="copy-btn"
+                    onclick="copyToClipboard(this)"
+                ></button>
+                <pre><code>
+console.log(5 > 2); // true
+console.log(5 == "5"); // true (type coercion is performed)
+console.log(5 === "5"); // false (different types)
+console.log(5 != "6"); // true
+console.log(5 !== "5"); // true (different types)</code></pre>
+            </div>
+
+            <p>
+                In the above examples, the first comparison returns
+                <code>true</code> because <code>5</code> is greater than
+                <code>2</code>. The second comparison returns
+                <code>true</code> because the double equal sign performs type
+                coercion, and <code>5</code> and <code>"5"</code> are considered
+                equal. The third comparison returns <code>false</code> because
+                the triple equal sign requires both values to be of the same
+                type, and <code>5</code> and <code>"5"</code> are not of the
+                same type. The fourth comparison returns
+                <code>true</code> because <code>5</code> is not equal to
+                <code>6</code>. The fifth comparison returns
+                <code>true</code> because <code>5</code> and
+                <code>"5"</code> are not only different, but also of different
+                types.
+            </p>
+
+            <h1>Logical Operators</h1>
+            <hr />
+            <table>
+                <tr>
+                    <th>Operator</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                </tr>
+                <tr>
+                    <td>&&</td>
+                    <td>
+                        Logical AND. Returns true if both operands are true,
+                        otherwise false.
+                    </td>
+                    <td>true && true evaluates to true</td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>
+                        Logical OR. Returns true if at least one of the operands
+                        is true, otherwise false.
+                    </td>
+                    <td>true || false evaluates to true</td>
+                </tr>
+                <tr>
+                    <td>!</td>
+                    <td>
+                        Logical NOT. Returns the opposite of the operand. If
+                        it's true, it returns false. If it's false, it returns
+                        true.
+                    </td>
+                    <td>!true evaluates to false</td>
+                </tr>
+            </table>
+
+            <p>
+                In JavaScript, there are three logical operators:
+                <code>&&</code> (logical AND), <code>||</code> (logical OR), and
+                <code>!</code> (logical NOT).
+            </p>
+
+            <p>
+                The <code>&&</code> operator returns true if both operands are
+                truthy, and false otherwise. Here's an example:
+            </p>
+            <div class="pre-container">
+                <button
+                    class="copy-btn"
+                    onclick="copyToClipboard(this)"
+                ></button>
+                <pre><code>const a = 10;
+const b = 20;
+const c = 30;
+
+console.log(a < b && b < c); // true
+console.log(a < b && b > c); // false</code></pre>
+            </div>
+
+            <p>
+                In the first <code>console.log()</code> statement, both
+                <code>a < b</code> and <code>b < c</code> are <code>true</code>,
+                so the overall expression evaluates to <code>true</code>. In the
+                second <code>console.log()</code> statement,
+                <code>b > c</code> is <code>false</code>, so the overall
+                expression evaluates to <code>false</code>.
+            </p>
+
+            <p>
+                The <code>||</code> operator returns <code>true</code> if at
+                least one of the operands is truthy, and
+                <code>false</code> otherwise. Here's an example:
+            </p>
+            <div class="pre-container">
+                <button
+                    class="copy-btn"
+                    onclick="copyToClipboard(this)"
+                ></button>
+                <pre><code>const x = 5;
+const y = 10;
+
+console.log(x > 3 || y < 5); // true
+console.log(x < 3 || y < 5); // false</code></pre>
+            </div>
+            <p>
+                In the first <code>console.log()</code> statement,
+                <code>x > 3</code> is <code>true</code>, so the overall
+                expression evaluates to <code>true</code>. In the second
+                <code>console.log()</code> statement, both
+                <code>x < 3</code> and <code>y < 5</code> are
+                <code>false</code>, so the overall expression evaluates to
+                <code>false</code>.
+            </p>
+
+            <p>
+                The <code>!</code> operator returns the opposite of the
+                operand's truthiness. If the operand is truthy,
+                <code>!</code> returns <code>false</code>. If the operand is
+                falsy, <code>!</code> returns <code>true</code>. Here's an
+                example:
+            </p>
+            <div class="pre-container">
+                <button
+                    class="copy-btn"
+                    onclick="copyToClipboard(this)"
+                ></button>
+                <pre><code>const z = 10;
+
+console.log(!(z > 5)); // false
+console.log(!(z < 5)); // true</code></pre>
+            </div>
+            <p>
+                In the first <code>console.log()</code> statement,
+                <code>z > 5</code> is <code>true</code>, so
+                <code>!(z > 5)</code> evaluates to <code>false</code>. In the
+                second <code>console.log()</code> statement,
+                <code>z < 5</code> is <code>false</code>, so
+                <code>!(z < 5)</code> evaluates to <code>true</code>.
+            </p>
+
+            <p>
+                Phew that was a lot to grasp, if you didn't understand anything,
+                sit back, relax for a while and try to understand it again. We
+                gotta keep our foundations strong.
+            </p>
+            <hr />
+            <p>
+                <a
+                    href="https://replit.com/@codewithharry/07Conditionals?v=1"
+                    target="_blank"
+                    >Go to next lecture</a
+                >
+            </p>
+
+            <script>
+                function copyToClipboard(button) {
+                    const pre = button.nextElementSibling;
+                    const textToCopy = pre.textContent;
+                    navigator.clipboard
+                        .writeText(textToCopy)
+                        .then(() => {
+                            button.textContent = "Copied!";
+                            setTimeout(() => {
+                                button.textContent = "";
+                            }, 2000);
+                        })
+                        .catch((err) => {
+                            console.error("Failed to copy: ", err);
+                        });
+                }
+            </script>
+        </div>
+    </body>
+</html>

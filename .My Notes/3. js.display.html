@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1." />
+    <title>JavaScript Display</title>
+  </head>
+  <body>
+    <h1>JavaScript Display Possibilities</h1>
+    <p>JavaScript can "display" data in different ways:</p>
+    <ul>
+      <li>
+        <h2>Writing into an HTML element, using <code>innerHTML</code>.</h2>
+        <p>
+          The id attribute defines the HTML element. The innerHTML property
+          defines the HTML content:
+        </p>
+
+        <p id="1"></p>
+
+        <script>
+          document.getElementById("1").innerHTML = 5 + 4;
+        </script>
+        <p>
+          Note: Changing the innerHTML property of an HTML element is a common
+          way to display data in HTML.
+        </p>
+      </li>
+      <li>
+        <h2>
+          Writing into the HTML output using <code>document.write()</code>.
+        </h2>
+        <script>
+          document.write(5 + 6);
+        </script>
+
+        <p>
+          Using document.write() after an HTML document is loaded, will delete
+          all existing HTML:
+        </p>
+        <button type="button" onclick="document.write(5 + 6)">Try it</button>
+        <p>
+          Note: The document.write() method should only be used for testing.
+        </p>
+      </li>
+      <li>
+        <h2>Writing into an alert box, using <code>window.alert()</code>.</h2>
+        <script>
+          window.alert(5 * 6);
+        </script>
+        <p>
+          In JavaScript, the window object is the global scope object. This
+          means that variables, properties, and methods by default belong to the
+          window object. This also means that specifying the window keyword is
+          optional. So, you can skip the window keyword:
+        </p>
+        <script>
+          alert(15 - 6);
+        </script>
+      </li>
+      <li>
+        <h2>
+          Writing into the browser console, using <code>console.log()</code>.
+        </h2>
+        <h2>Activate Debugging</h2>
+
+        <p>F12 on your keyboard will activate debugging.</p>
+        <p>Then select "Console" in the debugger menu.</p>
+        <p>Then click Run again.</p>
+
+        <script>
+          console.log(15 + 6);
+        </script>
+      </li>
+    </ul>
+
+    <h1>JavaScript Print</h1>
+    <p>
+      JavaScript does not have any print object or print methods. You cannot
+      access output devices from JavaScript.
+    </p>
+
+    <h2>The window.print() Method</h2>
+
+    <p>Click the button to print the current page.</p>
+
+    <button onclick="window.print()">Print this page</button>
+  </body>
+</html>

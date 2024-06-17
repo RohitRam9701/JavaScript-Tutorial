@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JavaScript with HTML</title>
+  </head>
+  <body>
+    <p>ECMAScript is the official name of the language.</p>
+    <h2>What Can JavaScript Do?</h2>
+
+    <button
+      type="button"
+      onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'
+    >
+      Click Me!
+    </button>
+
+    <p id="demo">JavaScript can change HTML content.</p>
+
+    <p>JavaScript accepts both double and single quotes:</p>
+
+    <button
+      type="button"
+      onclick="document.getElementById('demo3').innerHTML = 'Hello JavaScript!'"
+    >
+      Click Me!
+    </button>
+
+    <p id="demo3">JavaScript can change HTML content.</p>
+
+    <button
+      type="button"
+      onclick="document.getElementById('demo2').innerHTML = x + y"
+    >
+      Click me to add numbers.
+    </button>
+
+    <p id="demo2">Add numbers 5 and 10.</p>
+    <script>
+      let x = 5;
+      let y = 10;
+    </script>
+
+    <p>JavaScript can change HTML attribute values.</p>
+
+    <p>
+      In this case JavaScript changes the value of the src (source) attribute of
+      an image.
+    </p>
+
+    <button
+      onclick="document.getElementById('myImage').src='https://www.w3schools.com/js/pic_bulbon.gif'"
+    >
+      Turn on the light
+    </button>
+
+    <img
+      id="myImage"
+      src="https://www.w3schools.com/js/pic_bulboff.gif"
+      style="width: 100px"
+    />
+
+    <button
+      onclick="document.getElementById('myImage').src='https://www.w3schools.com/js/pic_bulboff.gif'"
+    >
+      Turn off the light
+    </button>
+
+    <p id="demo4">JavaScript can change the style of an HTML element (CSS).</p>
+
+    <button
+      type="button"
+      onclick="document.getElementById('demo4').style.fontSize='35px'"
+    >
+      Click Me!
+    </button><br>
+
+    <p id="demo5">JavaScript can hide HTML elements.</p>
+
+    <button
+      type="button"
+      onclick="document.getElementById('demo5').style.display='none'"
+    >
+      Click Me!
+    </button>
+
+    <p>JavaScript can show hidden HTML elements.</p>
+
+    <p id="demo6" style="display: none">Hello JavaScript!</p>
+
+    <button
+      type="button"
+      onclick="document.getElementById('demo6').style.display='block'"
+    >
+      Click Me!
+    </button>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1." />
+    <title>JavaScript Where To</title>
+    <script>
+      function myFunction() {
+        document.getElementById("demo").innerHTML = "Paragraph changed.";
+      }
+    </script>
+  </head>
+  <body>
+    <h2>JavaScript in Head</h2>
+
+    <p id="demo">A Paragraph.</p>
+
+    <button type="button" onclick="myFunction()">Try it</button>
+
+    <h2>JavaScript in Body</h2>
+
+    <p id="demo2">A Paragraph.</p>
+
+    <button type="button" onclick="myFunct()">Try it</button>
+    <!--The function is invoked (called) when a button is clicked-->
+    <script>
+      function myFunct() {
+        document.getElementById("demo2").innerHTML = "Paragraph changed.";
+      }
+    </script>
+
+    <h2>Write something into html using js</h2>
+    <p id="demo3"></p>
+
+    <script>
+      document.getElementById("demo3").innerHTML = "My First JavaScript";
+    </script>
+    <p>
+      Old JavaScript examples may use a type attribute: &lt;script
+      type="text/javascript"&gt;. The type attribute is not required. JavaScript
+      is the default scripting language in HTML.
+    </p>
+
+    <h2>JavaScript Functions and Events</h2>
+    <p>
+      A JavaScript function is a block of JavaScript code, that can be executed
+      when "called" for. For example, a function can be called when an event
+      occurs, like when the user clicks a button.
+    </p>
+
+    <code
+      >Note: JavaScript functions are executed in the order they are called.
+      Note: Placing scripts at the bottom of the &lt;body&gt; element improves
+      the display speed, because script interpretation slows down the display.
+    </code>
+
+    <h2>JavaScript in External file</h2>
+    <p>
+      External scripts are practical when the same code is used in many
+      different web pages. You can place an external script reference in
+      &lt;head&gt; or &lt;body&gt; as you like as below: &lt;script
+      src="myScript.js"&gt;&lt;/script&gt;<br />
+      External scripts cannot contain &lt;script&gt; tags.
+    </p>
+
+    <h2>External JS References</h2>
+
+    <p id="demo4">A Paragraph.</p>
+    <button type="button" onclick="myFuntn()">Click Me</button>
+    <p>(myFunction is stored in "myScript.js")</p>
+    <script src="My Notes/2. js_external.js"></script>
+
+    <p>An external script can be referenced in 3 different ways:</p>
+    <ul>
+      <li>With a full URL (a full web address)</li>
+      <p>
+        This example uses a full web URL to link to "myScript.js".<br />&lt;script
+        src="https://www.w3schools.com/js/myScript.js"&gt;&lt;/script&gt;
+      </p>
+
+      <li>With a file path (like /js/)</li>
+      <p>
+        This example uses a file path to link to "myScript.js".<br />&lt;script
+        src="/js/myScript.js"&gt;&lt;/script&gt;
+      </p>
+
+      <li>Without any path</li>
+      <p>
+        This example links to "myScript.js".<br />&lt;script
+        src="myScript.js"&gt;&lt;/script&gt;
+      </p>
+    </ul>
+  </body>
+</html>
