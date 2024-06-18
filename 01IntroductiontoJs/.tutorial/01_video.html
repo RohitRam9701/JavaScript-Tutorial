@@ -1,148 +1,276 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Embedded Video</title>
-        <style>
-            body {
-                background-color: #20263b;
-                font-family: Arial, sans-serif;
-            }
-            h1,
-            h2 {
-                color: #ffffff;
-            }
-            p {
-                font-family: "Lucida Sans", "Lucida Sans Regular",
-                    "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-                    sans-serif;
-                font-size: 15px;
-                color: #ffffff;
-            }
-            li {
-                color: #ffffff;
-            }
-            /* Optional: Add some styling to the video container */
-            .video-container {
-                position: relative;
-                padding-bottom: 56.25%; /* 16:9 aspect ratio */
-                height: 0;
-            }
-            .video-container iframe {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/ER9SspLe4Hg"></iframe>
-        </div>
-        <div>
-            <br />
-            <hr />
-            <h1>Introduction to JavaScript</h1>
-            <hr />
-            <p>
-                Welcome to the world of JavaScript! Today, having a solid
-                understanding of JavaScript is crucial for anyone who wants to
-                pursue a career in web development. With its versatility and
-                wide-range of applications, JavaScript is one of the most
-                important programming languages to learn. But don't worry, we'll
-                start from the basics and gradually raise the bar. By the end of
-                these tutorials, you'll be well on your way to becoming a
-                JavaScript pro.
-            </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Embedded Video</title>
+    <style>
+      body {
+        background-color: #20263b;
+        font-family: Arial, sans-serif;
+      }
+      h1,
+      h2 {
+        color: #ffffff;
+      }
+      pre {
+        color: #fffefe;
+        font-size: larger;
+      }
+      p {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        color: #ffffff;
+      }
+      li {
+        color: #ffffff;
+        font-size: medium;
+      }
+      /* Optional: Add some styling to the video container */
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-container">
+      <iframe
+        title="01IntroductiontoJs"
+        src="https://www.youtube.com/embed/ER9SspLe4Hg"></iframe>
+    </div>
+    <div>
+      <br />
+      <hr />
+      <h1 style="text-align: center">Practical</h1>
+      <hr />
+      <p>Watch console panel using Inspect or pressing f12</p>
+      <hr />
+      <pre>
+        console.log("Note: View Files from this Repl to Access the Source Code");
+        console.log("This program adds 1, 2 and 54");
+        function addThreeNumbers(a, b, c) {
+            return a + b + c;
+        }
+        let c = addThreeNumbers(1, 2, 54);
+        console.log(c);
+        console.log("This repl contains code for the ultimate javascript course video no 2");
+      </pre>
+      <hr />
+      <h1 style="text-align: center">Remember</h1>
+      <hr />
+      <p>
+        In JavaScript, semicolons are used to terminate statements. While
+        JavaScript allows you to omit semicolons in some cases due to automatic
+        semicolon insertion, it's a good practice to use them consistently to
+        prevent unexpected behavior in your code. Here's where you should use
+        semicolons in JavaScript:
+      </p>
+      <ol>
+        <li>
+          After Statements: Terminate each statement with a semicolon. For
+          example:
+          <pre>
+let x = 5;
+console.log(x); 
+                </pre
+          >
+        </li>
+        <li>
+          After Function Expressions: When defining a function expression,
+          terminate it with a semicolon if it's not the end of a block
+          statement. For example:
+          <pre>
+const myFunction = function() {
+    // function body
+};
+            </pre
+          >
+        </li>
 
-            <h2>What is Programming?</h2>
-            <hr />
-            <p>
-                Programming is the art of communicating with computers. Just
-                like some of your friends might understand Hindi, others might
-                understand English, computers understand programming. Think of
-                it as a language that we use to tell computers what to do.
-            </p>
+        <li>
+          After return, break, and continue statements: Terminate these
+          statements with a semicolon. For example:
+          <pre>
+function myFunction() {
+    return true;
+}
+            </pre
+          >
+        </li>
+        <li>
+          After Immediately Invoked Function Expressions (IIFE): Terminate IIFE
+          with a semicolon to prevent potential issues with surrounding code.
+          For example:
+          <pre>
+(function() {
+    // code
+})();
+            </pre
+          >
+        </li>
+        <li>
+          In for loops: Terminate the initialization, condition, and iteration
+          parts of a for loop with semicolons. For example:
+          <pre>
+for (let i = 0; i < 5; i++) {
+    // loop body
+}
+            </pre
+          >
+        </li>
+        <li>
+          In switch statements: Terminate each case and default block with a
+          semicolon. For example:
+          <pre>
+switch (expression) {
+  case x:
+    // code
+    break;
+  default:
+    // code
+    break;
+}
+            </pre
+          >
+        </li>
+        <li>
+          In object literals: When defining object literals on separate lines,
+          it's good practice to terminate each property with a semicolon. For
+          example:
+          <pre>
+const myObject = {
+  property1: 'value1',
+  property2: 'value2',
+};
+            </pre
+          >
+        </li>
+      </ol>
+      <p>
+        Remember that while JavaScript allows for some flexibility in semicolon
+        usage, it's best to adopt a consistent approach to enhance code
+        readability and avoid unexpected errors.
+      </p>
+      <script>
+        console.log(
+          "Note: View Files from this Repl to Access the Source Code"
+        );
+        console.log("This program adds 1, 2 and 54");
 
-            <h2>The Dumb Computer</h2>
-            <hr />
-            <p>
-                Despite its incredible speed and accuracy, a computer is
-                actually quite "dumb." It can only do exactly what you tell it
-                to do, and nothing more. This means that you have to be very
-                clear and precise in your instructions, or else the computer
-                might do something unexpected. For example, if you asked a
-                person to jump, they would probably know what you meant. But if
-                you asked a computer to jump, it wouldn't have a clue!
-            </p>
-            <p>
-                This might sound like a hindrance, but it's actually one of the
-                things that makes computers so useful. They can perform complex
-                calculations and processes much faster than a person ever could.
-                For example, if you asked a person to solve the equation ( 24 +
-                5 ), they might take a few seconds to give you the answer of 29.
-                But a computer would solve that equation almost instantly.
-            </p>
+        function addThreeNumbers(a, b, c) {
+          return a + b + c;
+        }
+        let c = addThreeNumbers(1, 2, 54);
+        console.log(c);
+        console.log(
+          "This repl contains code for the ultimate javascript course video no 2"
+        );
+      </script>
+      <hr />
+      <h1 style="text-align: center">Theory</h1>
+      <hr />
+      <h1>Introduction to JavaScript</h1>
+      <hr />
+      <p>
+        Welcome to the world of JavaScript! Today, having a solid understanding
+        of JavaScript is crucial for anyone who wants to pursue a career in web
+        development. With its versatility and wide-range of applications,
+        JavaScript is one of the most important programming languages to learn.
+        But don't worry, we'll start from the basics and gradually raise the
+        bar. By the end of these tutorials, you'll be well on your way to
+        becoming a JavaScript pro.
+      </p>
 
-            <h2>ECMAScript: The Standard Behind JavaScript</h2>
-            <hr />
-            <p>
-                ECMAScript is the standardized version of JavaScript that helps
-                ensure that code written in JavaScript will work the same way on
-                any computer. ECMAScript has come a long way since its
-                inception, with new features and capabilities added with each
-                new release. In most cases, "JavaScript" and "ECMAScript" can be
-                used interchangeably.
-            </p>
-            <p>
-                One of the great things about JavaScript is that it's a very
-                forgiving language. It tries to do something with the code you
-                write, even if it's not exactly right, and will only throw an
-                error if you've really messed up.
-            </p>
+      <h2>What is Programming?</h2>
+      <hr />
+      <p>
+        Programming is the art of communicating with computers. Just like some
+        of your friends might understand Hindi, others might understand English,
+        computers understand programming. Think of it as a language that we use
+        to tell computers what to do.
+      </p>
 
-            <h2>How to Use JavaScript</h2>
-            <hr />
-            <p>There are several ways to use JavaScript, including:</p>
-            <ol>
-                <li>
-                    In the browser: Most modern browsers have a JavaScript
-                    console that you can use to test and run your code.
-                </li>
-                <br />
-                <li>
-                    In HTML: You can add JavaScript to your HTML files and run
-                    it in the browser. This is a great way to add interactivity
-                    to your website.
-                </li>
-                <br />
-                <li>
-                    With a runtime environment: One popular runtime environment
-                    for JavaScript is Node.js. Node.js was created when a
-                    programmer named Ryan Dahl took Google's V8 JavaScript
-                    engine and wrapped it in C++. This allows you to run
-                    JavaScript code outside of the browser, which is useful for
-                    server-side programming.
-                </li>
-                <br />
-            </ol>
-            <p>
-                And, as a bonus, you can also use JavaScript in Replit, even if
-                your computer's specs are low or you're on the go.
-            </p>
+      <h2>The Dumb Computer</h2>
+      <hr />
+      <p>
+        Despite its incredible speed and accuracy, a computer is actually quite
+        "dumb." It can only do exactly what you tell it to do, and nothing more.
+        This means that you have to be very clear and precise in your
+        instructions, or else the computer might do something unexpected. For
+        example, if you asked a person to jump, they would probably know what
+        you meant. But if you asked a computer to jump, it wouldn't have a clue!
+      </p>
+      <p>
+        This might sound like a hindrance, but it's actually one of the things
+        that makes computers so useful. They can perform complex calculations
+        and processes much faster than a person ever could. For example, if you
+        asked a person to solve the equation ( 24 + 5 ), they might take a few
+        seconds to give you the answer of 29. But a computer would solve that
+        equation almost instantly.
+      </p>
 
-            <p>
-                In conclusion, learning JavaScript will open up a world of
-                possibilities for you. With its versatility and wide range of
-                applications, there's no limit to what you can accomplish with
-                this powerful programming language. So let's get started!
-            </p><hr><br>
-            <a href="https://replit.com/@codewithharry/02Variables?v=1#index.js"
-                >Go to next lecture</a
-            >
-        </div>
-    </body>
+      <h2>ECMAScript: The Standard Behind JavaScript</h2>
+      <hr />
+      <p>
+        ECMAScript is the standardized version of JavaScript that helps ensure
+        that code written in JavaScript will work the same way on any computer.
+        ECMAScript has come a long way since its inception, with new features
+        and capabilities added with each new release. In most cases,
+        "JavaScript" and "ECMAScript" can be used interchangeably.
+      </p>
+      <p>
+        One of the great things about JavaScript is that it's a very forgiving
+        language. It tries to do something with the code you write, even if it's
+        not exactly right, and will only throw an error if you've really messed
+        up.
+      </p>
+
+      <h2>How to Use JavaScript</h2>
+      <hr />
+      <p>There are several ways to use JavaScript, including:</p>
+      <ol>
+        <li>
+          In the browser: Most modern browsers have a JavaScript console that
+          you can use to test and run your code.
+        </li>
+        <li>
+          In HTML: You can add JavaScript to your HTML files and run it in the
+          browser. This is a great way to add interactivity to your website.
+        </li>
+        <li>
+          With a runtime environment: One popular runtime environment for
+          JavaScript is Node.js. Node.js was created when a programmer named
+          Ryan Dahl took Google's V8 JavaScript engine and wrapped it in C++.
+          This allows you to run JavaScript code outside of the browser, which
+          is useful for server-side programming.
+        </li>
+      </ol>
+      <p>
+        And, as a bonus, you can also use JavaScript in Replit, even if your
+        computer's specs are low or you're on the go.
+      </p>
+
+      <p>
+        In conclusion, learning JavaScript will open up a world of possibilities
+        for you. With its versatility and wide range of applications, there's no
+        limit to what you can accomplish with this powerful programming
+        language. So let's get started!
+      </p>
+      <hr />
+      <br />
+      <a href="https://replit.com/@codewithharry/02Variables?v=1#index.js"
+        >Go to next lecture</a
+      >
+    </div>
+  </body>
 </html>
