@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01IntroductiontoJs</title>
+    <style>
+      body {
+        background-color: #20263b;
+        font-family: Arial, sans-serif;
+      }
+
+      h1,
+      h2 {
+        color: #ffffff;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        color: #ffffff;
+      }
+
+      li {
+        color: #ffffff;
+      }
+
+      code {
+        font-size: 15px;
+        color: #7af46d;
+      }
+
+      .container {
+        display: flex;
+        /* Establishes a flex container */
+        align-items: center;
+        /* Centers items vertically */
+      }
+
+      /* Optional: Add some styling to the video container */
+      .video-container {
+        position: relative;
+        flex: 1.5;
+        /* Allows video container to grow and shrink */
+        padding-bottom: 38.25%;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+      }
+
+      iframe {
+        height: 430px;
+        width: 100%;
+        border: none;
+      }
+
+      .text-container {
+        flex: 1;
+        /* Allows text container to grow and shrink */
+        padding-left: 20px;
+        /* Adds some space between the text and the video */
+      }
+
+      .pre-container {
+        position: relative;
+        display: inline-block;
+        width: 80%;
+        margin-bottom: 1rem;
+        background-color: #2a3c56;
+        border-radius: 5px;
+        padding: 1rem 1.5rem 1rem 1rem;
+        /* Add right padding to create space for the button */
+        color: #f8f8f2;
+        font-size: 1rem;
+      }
+
+      pre {
+        margin: 0;
+        overflow: auto;
+        white-space: pre-wrap;
+      }
+
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #444;
+        border: none;
+        border-radius: 5px;
+        padding: 2px 5px;
+        cursor: pointer;
+        color: #f8f8f2;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .copy-btn:hover {
+        background-color: #50fa7b;
+        color: #282a36;
+      }
+
+      .copy-btn:active {
+        background-color: #28a745;
+      }
+
+      .copy-btn::after {
+        content: "\2702";
+      }
+
+      #p {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="video-container">
+        <iframe title="01IntroductiontoJs" src="https://www.youtube.com/embed/ER9SspLe4Hg"></iframe>
+      </div>
+      <div class="text-container">
+
+        <h1>Practical</h1>
+        <hr />
+        <p>Watch console panel using Inspect or pressing f12</p>
+        <hr />
+        <iframe title="01IntroductiontoJs" src="https://replit.com/@ramrohit9701/01IntroductiontoJs?lite=true"></iframe>
+      </div>
+    </div>
+    <script
+      src="C:\Users\Ramro\OneDrive\Desktop\5.JavaScript\JavaScript-Tutorial\01IntroductiontoJs\01IntroductiontoJs.js"></script>
+    <hr />
+    <h1>Theory</h1>
+    <hr />
+    <hr />
+    <h1>Introduction to JavaScript</h1>
+    <hr />
+    <p>
+      Welcome to the world of JavaScript! Today, having a solid understanding
+      of JavaScript is crucial for anyone who wants to pursue a career in web
+      development. With its versatility and wide-range of applications,
+      JavaScript is one of the most important programming languages to learn.
+      But don't worry, we'll start from the basics and gradually raise the
+      bar. By the end of these tutorials, you'll be well on your way to
+      becoming a JavaScript pro.
+    </p>
+
+    <h2>What is Programming?</h2>
+    <hr />
+    <p>
+      Programming is the art of communicating with computers. Just like some
+      of your friends might understand Hindi, others might understand English,
+      computers understand programming. Think of it as a language that we use
+      to tell computers what to do.
+    </p>
+
+    <h2>The Dumb Computer</h2>
+    <hr />
+    <p>
+      Despite its incredible speed and accuracy, a computer is actually quite
+      "dumb." It can only do exactly what you tell it to do, and nothing more.
+      This means that you have to be very clear and precise in your
+      instructions, or else the computer might do something unexpected. For
+      example, if you asked a person to jump, they would probably know what
+      you meant. But if you asked a computer to jump, it wouldn't have a clue!
+    </p>
+    <p>
+      This might sound like a hindrance, but it's actually one of the things
+      that makes computers so useful. They can perform complex calculations
+      and processes much faster than a person ever could. For example, if you
+      asked a person to solve the equation ( 24 + 5 ), they might take a few
+      seconds to give you the answer of 29. But a computer would solve that
+      equation almost instantly.
+    </p>
+
+    <h2>ECMAScript: The Standard Behind JavaScript</h2>
+    <hr />
+    <p>
+      ECMAScript is the standardized version of JavaScript that helps ensure
+      that code written in JavaScript will work the same way on any computer.
+      ECMAScript has come a long way since its inception, with new features
+      and capabilities added with each new release. In most cases,
+      "JavaScript" and "ECMAScript" can be used interchangeably.
+    </p>
+    <p>
+      One of the great things about JavaScript is that it's a very forgiving
+      language. It tries to do something with the code you write, even if it's
+      not exactly right, and will only throw an error if you've really messed
+      up.
+    </p>
+
+    <h2>How to Use JavaScript</h2>
+    <hr />
+    <p>There are several ways to use JavaScript, including:</p>
+    <ol>
+      <li>
+        <p>
+          In the browser: Most modern browsers have a JavaScript console that
+        you can use to test and run your code.
+        </p>        
+      </li>
+      <li>
+        <p>
+          In HTML: You can add JavaScript to your HTML files and run it in the
+        browser. This is a great way to add interactivity to your website.
+        </p>        
+      </li>
+      <li>
+        <p>
+          With a runtime environment: One popular runtime environment for
+        JavaScript is Node.js. Node.js was created when a programmer named
+        Ryan Dahl took Google's V8 JavaScript engine and wrapped it in C++.
+        This allows you to run JavaScript code outside of the browser, which
+        is useful for server-side programming.
+        </p>        
+      </li>
+    </ol>
+    <p>
+      And, as a bonus, you can also use JavaScript in Replit, even if your
+      computer's specs are low or you're on the go.
+    </p>
+
+    <p>
+      In conclusion, learning JavaScript will open up a world of possibilities
+      for you. With its versatility and wide range of applications, there's no
+      limit to what you can accomplish with this powerful programming
+      language. So let's get started!
+    </p>
+    <hr />
+    <h1>Remember</h1>
+    <hr />
+    <p>
+      In JavaScript, semicolons are used to terminate statements. While
+      JavaScript allows you to omit semicolons in some cases due to automatic
+      semicolon insertion, it's a good practice to use them consistently to
+      prevent unexpected behavior in your code. Here's where you should use
+      semicolons in JavaScript:
+    </p>
+    <ol>
+      <li>
+        <p>
+          After Statements: Terminate each statement with a semicolon. For
+          example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>let x = 5;
+console.log(x);</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          After Function Expressions: When defining a function expression,
+          terminate it with a semicolon if it's not the end of a block
+          statement. For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>const myFunction = function() {
+    // function body
+};</code></pre>
+        </div>
+      </li>
+
+      <li>
+        <p>
+          After return, break, and continue statements: Terminate these
+          statements with a semicolon. For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>function myFunction() {
+    return true;
+}</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          After Immediately Invoked Function Expressions (IIFE): Terminate IIFE
+          with a semicolon to prevent potential issues with surrounding code.
+          For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>(function() {
+    // code
+})();</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          In for loops: Terminate the initialization, condition, and iteration
+          parts of a for loop with semicolons. For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>for (let i = 0; i < 5; i++) {
+    // loop body
+}</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          In switch statements: Terminate each case and default block with a
+          semicolon. For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>switch (expression) {
+  case x:
+    // code
+    break;
+  default:
+    // code
+    break;
+}</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          In object literals: When defining object literals on separate lines,
+          it's good practice to terminate each property with a semicolon. For
+          example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>const myObject = {
+  property1: 'value1',
+  property2: 'value2',
+};</code></pre>
+        </div>
+      </li>
+    </ol>
+    <p>
+      Remember that while JavaScript allows for some flexibility in semicolon
+      usage, it's best to adopt a consistent approach to enhance code
+      readability and avoid unexpected errors.
+    </p>
+    <p id="p">
+      ---------------------------------------------------------------------
+    </p>
+
+    <p>
+      Omitting semicolons in JavaScript is possible in certain cases due to
+      automatic semicolon insertion, but it's essential to understand when
+      it's safe to do so to prevent unintended consequences. Here are the
+      cases where you can omit semicolons in JavaScript:
+    </p>
+    <ol>
+      <li>
+        <p>
+          Between Statements: When each statement is on a separate line,
+          JavaScript automatically inserts semicolons at the end of each line if
+          it's a valid place to do so. For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>let x = 5
+console.log(x)</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          After Blocks: You can omit semicolons after the closing curly brace of
+          a block (e.g., if, for, while statements) because JavaScript knows
+          that the block has ended. For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>if (condition) {
+  // code block
+}</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          When the statement starts with `(`, `[`, or `` ` ``: If a statement
+          starts with `(`, `[`, or `` ` ``, it's safe to omit semicolons. For
+          example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>let x = 5
+(function() {
+  // code
+})()</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          After the `return`, `throw`, and `yield` keywords: You can omit
+          semicolons after `return`, `throw`, and `yield` statements because
+          JavaScript interprets these as the end of the statement. For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>function myFunction() {
+  return true
+}</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>
+          Before or after the `++` and `--` operators: You can omit semicolons
+          before `++` and `--` operators if they are used as postfix operators.
+          For example:
+        </p>
+        <div class="pre-container">
+          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <pre><code>let x = 5
+x++</code></pre>
+        </div>
+      </li>
+    </ol>
+    <p>
+      While JavaScript allows for flexibility in these cases, it's generally
+      recommended to use semicolons consistently to enhance code clarity and
+      prevent potential issues, especially when concatenating or minifying
+      JavaScript code.
+    </p>
+    <hr />
+    <br />
+    <a href="https://replit.com/@codewithharry/02Variables?v=1#index.js" target="_blank" rel="noopener">Go to next
+      lecture</a>
+    </div>
+  </body>
+
+</html>

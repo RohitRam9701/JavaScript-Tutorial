@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Embedded Video</title>
+        <title>03varletconst</title>
         <style>
             body {
                 background-color: #20263b;
@@ -14,6 +14,9 @@
             h2,
             h3 {
                 color: #ffffff;
+            }
+            h1, h2 {
+                text-align: center;
             }
 
             p {
@@ -30,14 +33,22 @@
 
             code {
                 font-size: 15px;
-                color:#f7ad8b;
+                color:#7af46d;
             }
 
+            .container {
+                display: flex;
+                /* Establishes a flex container */
+                align-items: center;
+                /* Centers items vertically */
+            }
+
+            /* Optional: Add some styling to the video container */
             .video-container {
                 position: relative;
-                padding-bottom: 56.25%;
-                /* 16:9 aspect ratio */
-                height: 0;
+                flex: 1.5;
+                /* Allows video container to grow and shrink */
+                padding-bottom: 38.25%;
             }
 
             .video-container iframe {
@@ -46,6 +57,17 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
+                
+            }
+            iframe {
+                height: 430px; width: 100%; border: none;
+            }
+
+            .text-container {
+                flex: 1;
+                /* Allows text container to grow and shrink */
+                padding-left: 20px;
+                /* Adds some space between the text and the video */
             }
 
             .pre-container {
@@ -116,17 +138,35 @@
         </style>
     </head>
 
-    <body>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/Icev9Oxf0WA"></iframe>
-        </div>
-        <div>
-            <br />
-            <hr />
+        <div  class="container">
+           <div class="video-container">
+            <iframe title="03varletconst" src="https://www.youtube.com/embed/Icev9Oxf0WA"></iframe>
+           </div>
+           <div class="text-container">
 
-            <h1 align="center">Variables</h1>
+            <h1>Practical</h1>
             <hr />
-            <h2 align="center">var, let and const</h2>
+            <p>Watch console panel using Inspect or pressing f12</p>
+            <hr />
+            <iframe title="03varletconst" src="https://replit.com/@ramrohit9701/03varletconst?lite=true"
+                   ></iframe>
+            </div>
+        </div>
+<p>Conclusions are:</p>
+<ul>
+    <li>var can be redeclared and updated, while let can only be updated but not redeclared, and const can neither be updated nor redeclared.</li>
+    <li>we have to use let and const instead of var.</li>
+    <li>we have to use const most of the time.</li>
+    <li>we must think of scope of variables if we are going to use var.</li>
+</ul>                 
+            <script src="C:\Users\Ramro\OneDrive\Desktop\5.JavaScript\JavaScript-Tutorial\03varletconst\03varletconst.js"></script>
+            <hr>
+                <h1>Theory</h1>
+                <hr />
+                <hr>
+            <h1>Variables</h1>
+            <hr />
+            <h2>var, let and const</h2>
             <hr />
             <p>
                 In the previous video, we learned about syntax, types of
@@ -158,6 +198,7 @@
             </p>
             <div class="pre-container">
                 <button
+                type="button" title="Copy"
                     class="copy-btn"
                     onclick="copyToClipboard(this)"
                 ></button>
@@ -170,6 +211,7 @@ console.log(name); //output: Harry</code></pre>
             </p>
             <div class="pre-container">
                 <button
+                type="button" title="Copy"
                     class="copy-btn"
                     onclick="copyToClipboard(this)"
                 ></button>
@@ -191,6 +233,7 @@ console.log(name); //output: Ron</code></pre>
             <p>Here's an example:</p>
             <div class="pre-container">
                 <button
+                type="button" title="Copy"
                     class="copy-btn"
                     onclick="copyToClipboard(this)"
                 ></button>
@@ -219,6 +262,7 @@ console.log(name); //output: Ron</code></pre>
             <p>Here's an example:</p>
             <div class="pre-container">
                 <button
+                type="button" title="Copy"
                     class="copy-btn"
                     onclick="copyToClipboard(this)"
                 ></button>
@@ -243,6 +287,7 @@ console.log(b); //output: Harry</code></pre>
             <p>Here's an example:</p>
             <div class="pre-container">
                 <button
+                type="button" title="Copy"
                     class="copy-btn"
                     onclick="copyToClipboard(this)"
                 ></button>
@@ -253,7 +298,7 @@ console.log(name); //output: Uncaught TypeError: Assignment to constant variable
 
             <h1>Differences</h1>
             <hr />
-            <table style="width: 100%; color: #ffffff">
+            <table>
                 <tr>
                     <th></th>
                     <th>Block scoped</th>
@@ -337,6 +382,7 @@ console.log(name); //output: Uncaught TypeError: Assignment to constant variable
                     </p>
                     <div class="pre-container">
                         <button
+                        type="button" title="Copy"
                             class="copy-btn"
                             onclick="copyToClipboard(this)"
                         ></button>
@@ -351,6 +397,7 @@ const name = "Harry"; //good</code></pre>
                     </p>
                     <div class="pre-container">
                         <button
+                        type="button" title="Copy"
                             class="copy-btn"
                             onclick="copyToClipboard(this)"
                         ></button>
@@ -369,6 +416,7 @@ const myname = "Harry"; //bad</code></pre>
                     </p>
                     <div class="pre-container">
                         <button
+                        type="button" title="Copy"
                             class="copy-btn"
                             onclick="copyToClipboard(this)"
                         ></button>
@@ -387,6 +435,7 @@ var name = "Harry"; //bad</code></pre>
                     </p>
                     <div class="pre-container">
                         <button
+                        type="button" title="Copy"
                             class="copy-btn"
                             onclick="copyToClipboard(this)"
                         ></button>
@@ -418,6 +467,7 @@ var name = "Harry"; //bad</code></pre>
                     </p>
                     <div class="pre-container">
                         <button
+                        type="button" title="Copy"
                             class="copy-btn"
                             onclick="copyToClipboard(this)"
                         ></button>
@@ -447,11 +497,11 @@ var name = "Harry"; //bad</code></pre>
             <p><hr><br>
                 <a                    href="https://replit.com/@codewithharry/04primitivesobjects?v=1"
                     target="_blank"
+                    rel="noopener"
                     >Go to next lecture</a
                 >
             </p>
-        </div>
-
+            
         <script>
             function copyToClipboard(button) {
                 const pre = button.nextElementSibling;

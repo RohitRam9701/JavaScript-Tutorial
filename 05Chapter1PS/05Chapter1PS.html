@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05_Practice Set 1</title>
+    <style>
+      body {
+        background-color: #20263b;
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+        padding: 20px;
+        margin: 0;
+      }
+
+      h1,
+      h2 p {
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      details {
+        background-color: #20263b;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 50px;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        border: 1px solid #555;
+      }
+      summary {
+        cursor: pointer;
+        font-weight: bold;
+      }
+      summary::marker {
+        color: #ffffff;
+      }
+      .pre-container {
+        position: relative;
+        display: flex;
+        background-color: #2a3c56;
+        border-radius: 5px;
+        padding: 1rem 1.5rem 1rem 1rem;
+        color: #f8f8f2;
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+      pre {
+        margin: 0;
+        overflow: auto;
+        white-space: pre-wrap;
+      }
+
+      code {
+        font-size: 15px;
+        color: #50fa7b;
+      }
+
+      .container {
+        display: flex;
+        /* Establishes a flex container */
+        align-items: center;
+        /* Centers items vertically */
+      }
+
+      /* Optional: Add some styling to the video container */
+      .video-container {
+        position: relative;
+        flex: 1.5;
+        /* Allows video container to grow and shrink */
+        padding-bottom: 38.25%;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      iframe {
+        height: 430px;
+        width: 100%;
+        border: none;
+      }
+      
+      .text-container {
+        flex: 1;
+        /* Allows text container to grow and shrink */
+        padding-left: 20px;
+        /* Adds some space between the text and the video */
+      }
+
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #444;
+        border: none;
+        border-radius: 5px;
+        padding: 2px 5px;
+        cursor: pointer;
+        color: #f8f8f2;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .copy-btn:hover {
+        background-color: #50fa7b;
+        color: #282a36;
+      }
+
+      .copy-btn:active {
+        background-color: #28a745;
+      }
+
+      .copy-btn::after {
+        content: "✂️";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="video-container">
+        <iframe
+          title="05Chapter1PS"
+          src="https://www.youtube.com/embed/vA-AAeqkpxM"></iframe>
+      </div>
+      <div class="text-container">
+        <h1>Practical</h1>
+        <hr />
+        <p>Watch console panel using Inspect or pressing f12</p>
+        <hr />
+        <iframe
+          title="05Chapter1PS"
+          src="https://replit.com//@ramrohit9701/05Chapter1PS?lite=true"></iframe>
+      </div>
+    </div>
+    <script src="C:\Users\Ramro\OneDrive\Desktop\5.JavaScript\JavaScript-Tutorial\05Chapter1PS\05Chapter1PS.js"></script>
+    <hr />
+    <h1>Practice Set 1</h1>
+    <hr />
+    <br />
+    <p>
+      Now that we've covered the basics of JavaScript, it's time to put our
+      knowledge to the test. In this practice set, we'll cover a range of topics
+      from variables to objects.
+    </p>
+
+    <h2>Q1: Adding numbers to strings</h2>
+    <hr />
+    <br />
+    <p>Create a variable of type string and try to add a number to it.</p>
+    <br />
+    <details>
+      <summary>Answer</summary>
+      <hr />
+      <br />
+      <div class="pre-container">
+        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+        <pre><code>let name = "Harry";
+let age = 29;
+console.log(name + age); // "Harry29"</code></pre>
+      </div>
+      <p>
+        In JavaScript, <b>concatenation</b> is the process of combining two or
+        more strings into a single string. When you use the + operator with a
+        string and a number, the number is automatically converted to a string
+        and then concatenated with the original string. We'll cover more about
+        string concatenation in the future.
+      </p>
+    </details>
+
+    <h2>Q2: Using typeof</h2>
+    <hr />
+    <br />
+    <p>
+      Use the typeof keyword to see the data type of the variables in the
+      previous question.
+    </p>
+    <br />
+    <details>
+      <summary>Answer</summary>
+      <hr />
+      <br />
+      <div class="pre-container">
+        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+        <pre><code>console.log(typeof name); // "string"
+console.log(typeof age); // "number"</code></pre>
+      </div>
+      <p>
+        When you use the typeof keyword with a variable, it returns a string
+        indicating the data type of that variable. In this case, name is a
+        string, and age is a number.
+      </p>
+    </details>
+
+    <h2>Q3: Const objects</h2>
+    <hr />
+    <br />
+    <p>
+      Create a constant object in JavaScript and then try to change its value to
+      another data type.
+    </p>
+    <br />
+    <details>
+      <summary>Answer</summary>
+      <hr />
+      <br />
+      <div class="pre-container">
+        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+        <pre><code>const biodata = { 
+    name: "Harry",
+    age: 30 
+};
+biodata = 29; // TypeError: Assignment to constant variable.</code></pre>
+      </div>
+      <p>
+        When you create a constant in JavaScript, its value cannot be changed.
+        If you try to assign a new value to a constant, you'll get a TypeError.
+      </p>
+    </details>
+
+    <h2>Q4: Modifying const objects</h2>
+    <hr />
+    <br />
+    <p>Try to add a new key to the previous const object.</p>
+    <br />
+    <details>
+      <summary>Answer</summary>
+      <hr />
+      <br />
+      <div class="pre-container">
+        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+        <pre><code>const biodata = { 
+    name: "Harry", 
+    age: 30 
+    };
+biodata.address = "123 Main St";
+console.log(biodata); // { name: "John", age: 30, address: "123 Main St" }</code></pre>
+      </div>
+      <p>
+        Even though biodata is a constant, we can still modify its properties.
+        This is because the const keyword only prevents us from reassigning the
+        variable to a different value. The object itself is still mutable, which
+        means we can add or change its properties.
+      </p>
+    </details>
+
+    <h2>Q5: Month dictionary</h2>
+    <hr />
+    <br />
+    <p>
+      Create a JavaScript program to make a month dictionary like 1 = January, 2
+      = February, and so on.
+    </p>
+    <br />
+    <details>
+      <summary>Answer</summary>
+      <hr />
+      <br />
+      <div class="pre-container">
+        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+        <pre><code>const months = {
+  1: "January",
+  2: "February",
+  3: "March",
+  4: "April",
+  5: "May",
+  6: "June",
+  7: "July",
+  8: "August",
+  9: "September",
+  10: "October",
+  11: "November",
+  12: "December"
+};</code></pre>
+      </div>
+      <p>
+        This creates a JavaScript object where each key-value pair represents a
+        month number and its corresponding month name.
+      </p>
+    </details>
+
+    <p>
+      Congratulations, you've completed Practice Set 1! If you got everything
+      correct, great job! If not, don't worry - practice makes perfect. Keep
+      practicing and you'll get there.
+    </p>
+    <hr />
+    <p>
+      <a
+        href="https://replit.com/@codewithharry/06Operators?v=1#index.js"
+        rel="noopener"
+        target="_blank"
+        >Go to next lecture</a
+      >
+    </p>
+    <script>
+      function copyToClipboard(button) {
+        const pre = button.nextElementSibling;
+        const textToCopy = pre.textContent;
+        navigator.clipboard
+          .writeText(textToCopy)
+          .then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => {
+              button.textContent = "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      }
+    </script>
+  </body>
+</html>

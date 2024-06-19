@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04_Primitives and Objects</title>
+    <style>
+      body {
+        background-color: #20263b;
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #ffffff;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p,
+      li {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        color: #ffffff;
+      }
+
+      code {
+        font-size: 15px;
+        color: #7af46d;
+      }
+
+      .container {
+        display: flex;
+        /* Establishes a flex container */
+        align-items: center;
+        /* Centers items vertically */
+      }
+
+      /* Optional: Add some styling to the video container */
+      .video-container {
+        position: relative;
+        flex: 1.5;
+        /* Allows video container to grow and shrink */
+        padding-bottom: 38.25%;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      iframe {
+        height: 430px;
+        width: 100%;
+        border: none;
+      }
+
+      .text-container {
+        flex: 1;
+        /* Allows text container to grow and shrink */
+        padding-left: 20px;
+        /* Adds some space between the text and the video */
+      }
+
+      .pre-container {
+        position: relative;
+        display: inline-block;
+        width: 80%;
+        margin-bottom: 1rem;
+        background-color: #2a3c56;
+        border-radius: 5px;
+        padding: 1rem 1.5rem 1rem 1rem;
+        color: #f8f8f2;
+        font-size: 1rem;
+      }
+
+      pre {
+        margin: 0;
+        overflow: auto;
+        white-space: pre-wrap;
+      }
+
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #444;
+        border: none;
+        border-radius: 5px;
+        padding: 2px 5px;
+        cursor: pointer;
+        color: #f8f8f2;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .copy-btn:hover {
+        background-color: #50fa7b;
+        color: #282a36;
+      }
+
+      .copy-btn:active {
+        background-color: #28a745;
+      }
+
+      .copy-btn::after {
+        content: "\2702";
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="video-container">
+        <iframe
+          title="04primitivesobjects"
+          src="https://www.youtube.com/embed/qpU3WIqRz9I"></iframe>
+      </div>
+      <div class="text-container">
+        <h1>Practical</h1>
+        <hr />
+        <p>Watch console panel using Inspect or pressing f12</p>
+        <hr />
+        <iframe
+          title="04primitivesobjects"
+          src="https://replit.com//@ramrohit9701/04primitivesobjects?lite=true"></iframe>
+      </div>
+    </div>
+    <script src="C:\Users\Ramro\OneDrive\Desktop\5.JavaScript\JavaScript-Tutorial\04primitivesobjects\04primitivesobjects.js"></script>
+    <hr />
+    <h1>Theory</h1>
+    <hr />
+    <hr />
+    <h1>Primitives and Objects</h1>
+    <hr />
+    <p>
+      In JavaScript, there are 7 primitive data types. The primitive data types
+      are fundamental data types that are built into JavaScript. A good trick to
+      remember these 7 data types is <code>"NNSSBBU"</code>:
+    </p>
+    <ul>
+      <li>N - null</li>
+      <li>N - number</li>
+      <li>S - symbol</li>
+      <li>S - string</li>
+      <li>B - boolean</li>
+      <li>B - bigint</li>
+      <li>U - undefined</li>
+    </ul>
+    <p>
+      These data types are used to define the type of variables and the type of
+      content that can be stored in them. For example:
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>let nullVar = null;
+let numVar = 29;
+let boolVar = true;
+let bigIntVar = BigInt("567");
+let strVar = "harry";
+let symbolVar = Symbol("I'm a nice symbol");
+let undefinedVar = undefined;</code></pre>
+    </div>
+    <p>
+      It's important to use descriptive variable names instead of generic ones
+      like a, b, c, etc.
+    </p>
+    <h2>null vs undefined</h2>
+    <hr />
+    <p>
+      The <code>null</code> data type represents the intentional absence of any
+      object value, whereas the <code>undefined</code> data type indicates the
+      absence of a defined value. For example:
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>let nullVar = null; // value is intentionally nothing
+let undefinedVar; // value is undefined or not defined</code></pre>
+    </div>
+    <h2>Using <code>typeof</code></h2>
+    <hr />
+    <p>
+      We can use the <code>typeof</code> operator to determine the data type of
+      a variable. For example:
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>console.log(typeof numVar); // Output: number
+console.log(typeof strVar); // Output: string</code></pre>
+    </div>
+    <h1>Objects</h1>
+    <hr />
+    <p>
+      Other than the 7 primitive data types, the non-primitive data type in
+      JavaScript is the object. Objects are key-value pairs, used to map keys to
+      values. We can create an object like this:
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>const bioData = {
+    name: "Harry",
+    age: 29,
+    likesJS: true,
+    secret: undefined,
+};</code></pre>
+    </div>
+    <p>
+      We can access an object's values in two ways: by using square brackets
+      <code>[]</code> or by using dot notation <code>.</code>. For example:
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>console.log(bioData["name"]); // Output: Harry
+console.log(bioData.age); // Output: 29
+console.log(bioData["pet"]); // Output: undefined</code></pre>
+    </div>
+    <p>
+      <strong>Note:</strong> see how <code>["pet"]</code> says undefined, this
+      is because the key "pet" doesn't exist in the object bioData.
+    </p>
+    <h1>Conclusion</h1>
+    <hr />
+    <p>
+      Remember that variables are like containers, and data types define what
+      type of content can be stored in them. Just like we wouldn't store our
+      cookies in a container meant for pesticides, it's important to use the
+      correct data types in JavaScript.
+    </p>
+    <p>
+      Another key point to remember is that objects are used to map keys to
+      values and can be accessed using square brackets
+      <code>[]</code> or dot notation <code>.</code>.
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>const harryMarks = {
+    english: 100,
+    maths: 80,
+    chemistry: 40,
+};
+
+const shubhMarks = {
+    english: 70,
+    maths: 100,
+    chemistry: 60,
+};</code></pre>
+    </div>
+    <p>
+      In conclusion, understanding primitive data types and objects is important
+      for writing effective JavaScript code. By using the correct data types, we
+      can improve the efficiency and readability of our code.
+    </p>
+    <hr />
+    <br />
+    <a
+      href="https://replit.com/@codewithharry/05Chapter1PS?v=1#index.js"
+      rel="noopener"
+      target="_blank"
+      >Go to next lecture</a
+    >
+    <script>
+      function copyToClipboard(button) {
+        const pre = button.nextElementSibling;
+        const textToCopy = pre.textContent;
+        navigator.clipboard
+          .writeText(textToCopy)
+          .then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => {
+              button.textContent = "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      }
+    </script>
+  </body>
+</html>
