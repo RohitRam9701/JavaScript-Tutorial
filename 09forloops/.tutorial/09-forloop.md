@@ -96,3 +96,5 @@ Loops are a fundamental programming concept used to perform repetitive tasks eff
 For loops are commonly used for iterating over a sequence of numbers or a list of items. For-in loops are used for iterating over the properties of an object, and for-of loops are used for iterating over iterable objects such as arrays and strings. Understanding how to use loops effectively is essential for writing efficient and readable code in JavaScript.
 
 We will discuss while and do-while loops in our next tutorial.
+
+[Next-Lecture](https://replit.com/@ramrohit9701/10whileloops)

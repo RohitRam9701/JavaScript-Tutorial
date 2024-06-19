@@ -34,4 +34,4 @@ And, as a bonus, you can also use JavaScript in Replit, even if your computer's 
 
 In conclusion, learning JavaScript will open up a world of possibilities for you. With its versatility and wide range of applications, there's no limit to what you can accomplish with this powerful programming language. So let's get started!
 
-[Go to next lecture](https://replit.com/@codewithharry/02Variables?v=1#index.js)
+[Go to next lecture](https://replit.com/@ramrohit9701/02Variables)

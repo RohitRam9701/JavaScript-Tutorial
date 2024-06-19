@@ -77,6 +77,6 @@ console.log(name); // will print "Harry"
 console.log(Name); // will print "Ron"
 ```
 
-[Go to next lecture](https://replit.com/@codewithharry/03varletconst?v=1#index.js)
+[Go to next lecture](https://replit.com/@ramrohit9701/03varletconst)
 
 
