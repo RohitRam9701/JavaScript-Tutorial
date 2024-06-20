@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09_For loops</title>
+    <style>
+      body {
+        background-color: #20263b;
+        font-family: Arial, sans-serif;
+        color: #ffffff;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #ffffff;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p,
+      li {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        color: #ffffff;
+      }
+
+      code {
+        font-size: 15px;
+        color: #7af46d;
+      }
+
+      .container {
+        display: flex;
+        /* Establishes a flex container */
+        align-items: center;
+        /* Centers items vertically */
+      }
+
+      /* Optional: Add some styling to the video container */
+      .video-container {
+        position: relative;
+        flex: 1.5;
+        /* Allows video container to grow and shrink */
+        padding-bottom: 38.25%;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      iframe {
+        height: 430px;
+        width: 100%;
+        border: none;
+      }
+
+      .text-container {
+        flex: 1;
+        /* Allows text container to grow and shrink */
+        padding-left: 20px;
+        /* Adds some space between the text and the video */
+      }
+
+      .pre-container {
+        position: relative;
+        display: inline-block;
+        width: 80%;
+        margin-bottom: 1rem;
+        background-color: #2a3c56;
+        border-radius: 5px;
+        padding: 1rem 1.5rem 1rem 1rem;
+        color: #f8f8f2;
+        font-size: 1rem;
+      }
+
+      pre {
+        margin: 0;
+        overflow: auto;
+        white-space: pre-wrap;
+      }
+
+      .copy-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #444;
+        border: none;
+        border-radius: 5px;
+        padding: 2px 5px;
+        cursor: pointer;
+        color: #f8f8f2;
+        font-size: 0.9rem;
+        transition: background-color 0.3s ease;
+      }
+
+      .copy-btn:hover {
+        background-color: #50fa7b;
+        color: #282a36;
+      }
+
+      .copy-btn:active {
+        background-color: #28a745;
+      }
+
+      .copy-btn::after {
+        content: "\2702";
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="video-container">
+        <iframe
+          title="09forloops"
+          src="https://www.youtube.com/embed/XKyyM1VWtUE"></iframe>
+      </div>
+      <div class="text-container">
+        <h1>Practical</h1>
+        <hr />
+        <p>Watch console panel using Inspect or pressing f12</p>
+        <hr />
+        <iframe
+          title="09forloops"
+          src="https://replit.com/@ramrohit9701/09forloops?lite=true"></iframe>
+      </div>
+    </div>
+    <script src="09forloops.js"></script>
+    <p>
+        Note: If any of the prompts isn't functioning as expected in your current
+        browser, consider trying a different browser (like Firefox). Sometimes, certain features
+        may behave differently across browsers due to variations in their
+        rendering engines and JavaScript support.
+    </p>
+    <hr />
+    <h1>Theory</h1>
+    <hr />
+    <hr />
+    <h1>Loops</h1>
+    <hr />
+    <p>
+      Loops are used to perform repetitive tasks in programming. For example, if you wanted to print something 20 times, you could do it manually, but what if you needed to print it 20,000 times? That's where loops come in handy.
+    </p>
+    <p>
+      There are 5 types of loops in JavaScript:
+    </p>
+    <ol>
+      <li><code>for</code> loop</li>
+      <li><code>for-in</code> loop</li>
+      <li><code>for-of</code> loop</li>
+      <li><code>while</code> loop</li>
+      <li><code>do-while</code> loop</li>
+    </ol>
+    <p>
+      In this lesson, we'll learn about the first 3 types of loops.
+    </p>
+    <h2>For Loops</h2>
+    <hr />
+    <p>
+      The syntax for a for loop is as follows:
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}</code></pre>
+    </div>
+    <p>
+      Statement 1 is executed once before the loop starts. Statement 2 is checked at the beginning of each iteration, and if it's true, the code block is executed. After the code block has been executed, statement 3 is executed, and then the condition is checked again. This process repeats until the condition is no longer true.
+    </p>
+    <p>
+      Here's an example of using a for loop to print numbers from 1 to 29:
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>for (let i = 1; i <= 29; i++) {
+  console.log(i);
+}</code></pre>
+    </div>
+    <p>
+      This code will print the numbers from 1 to 29 to the console. As you can see, using a for loop makes it much easier to perform repetitive tasks like this.
+    </p>
+    <h3>Summing Numbers with a for Loop</h3>
+    <hr />
+    <p>
+      Here's an example of using a for loop to sum the first n numbers, where n is entered by the user:
+    </p>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>let n = prompt("Enter a number");
+let sum = 0;
+for (let i = 1; i <= n; i++) {
+  sum = sum + i;
+}
+console.log("The sum of first " + n + " numbers is " + sum);</code></pre>
+    </div>
+    <p>
+      This code is used to calculate the sum of the first n numbers where <code>n</code> is provided by the user through a prompt. The code uses a for loop to iterate over the numbers from 1 to n and add them to a variable called <code>sum</code>.
+    </p>
+    <p>
+      The for loop starts by initializing a loop variable <code>i</code> to 1, and checking if it is less than or equal to the value of <code>n</code>. If the condition is true, the loop body is executed, which adds the value of <code>i</code> to the <code>sum</code> variable. The loop then increments the value of <code>i</code> by 1 and repeats the process until the condition becomes <code>false</code>.
+    </p>
+    <p>
+      Finally, the code prints out the result of the sum using <code>console.log()</code>, which concatenates strings and variables to create a message that displays the value of <code>n</code> and the sum of the first <code>n</code> numbers.
+    </p>
+    <h2>For-In Loops</h2>
+    <hr />
+    <p>
+      <strong><code>for-in</code> loop</strong>: A for-in loop is a variant of the for loop that is used to iterate over the properties of an object.
+    </p>
+    <ul>
+      <li>Iterates over the <strong>keys</strong> (property names) of an object.</li>
+      <li>Useful for iterating through object properties.</li>
+      <li>The syntax is as follows:</li>
+    </ul>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>for (let property in object) {
+  // code block to be executed
+}</code></pre>
+    </div>
+    <ul>
+        <li>
+          Here's an example of using a for-in loop to iterate over the properties of an object:
+        </li>
+    </ul>
+    <div class="pre-container">
+      <button
+        type="button"
+        title="Copy"
+        class="copy-btn"
+        onclick="copyToClipboard(this)"></button>
+      <pre><code>let person = {
+  name: "Harry",
+  age: 30,
+  gender: "male",
+};
+
+for (let x in person) {
+  console.log(x + ": " + person[x]);
+}</code></pre>
+    </div>
+    <p>
+      This code will print each property of the person object and its corresponding value to the console.
+    </p>
+    <ul>
+        <li>Not recommended for arrays because it can also iterate over non-index properties (like custom added properties). For example:</li>
+    </ul>
+    <div class="pre-container">
+      <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+      <pre><code>const arr = [3, 5, 7];
+arr.foo = "hello"; // added property
+for (const key in arr) {
+  console.log(key); // Logs "0", "1", "2", "foo"
+}
+console.log(arr); // output: both keys and values</code></pre>
+    </div>
+
+    <h2>For-Of Loops</h2>
+    <hr />
+    <p>
+      <strong><code>for-of</code> loop</strong>: A for-of loop is another variant of the for loop that is used to iterate over iterable objects like arrays and strings.
+    </p>
+    <ul>
+      <li>Iterates over the <strong>values</strong> of an iterable object (such as arrays, strings, maps, sets, etc.).</li>
+      <li>Specifically designed for arrays and other iterable data structures.</li>
+      <li>The syntax is as follows:</li>
+    </ul>
+    <div class="pre-container">
+      <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+      <pre><code>for (let value of iterable) {
+  // code block to be executed
+}</code></pre>
+    </div>
+    <ul>
+      <li>Example:</li>
+    </ul>
+    <div class="pre-container">
+      <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+      <pre><code>const cars = ["BMW", "Volvo", "Mini"];
+let text = "";
+for (const car of cars) {
+  text += car;
+}
+// Result: "BMWVolvoMini"</code></pre>
+    </div>
+    <ul>
+        <li>Here's another example of using a for-of loop to iterate over the elements of an array:</li>
+    </ul>
+    <div class="pre-container">
+      <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+      <pre><code>let numbers = [1, 2, 3, 4, 5];
+
+for (let number of numbers) {
+  console.log(number);
+}</code></pre>
+    </div>
+    <p>This code will print each element of the numbers array to the console.</p>
+    <ul>
+      <li>Ignores (avoids) non-index properties (like custom added properties) as it directly iterates over values. For example:</li>
+    </ul>
+    <div class="pre-container">
+      <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+      <pre><code>const arr = [3, 5, 7];
+arr.foo = "hello"; // added property
+for (const value of arr) {
+  console.log(value); // Logs "3", "5", "7" (no "hello" here!)
+}
+console.log(arr); // output: both keys and values</code></pre>
+    </div>
+    <p>
+      Note that we will be using for-in and for-of loops extensively when working with arrays, which we will cover later in this course.
+    </p>
+    <h1>Conclusion</h1>
+    <hr />
+    <p>
+      Loops are a fundamental programming concept used to perform repetitive tasks efficiently. JavaScript offers five types of loops: <code>for</code>, <code>for-in</code>, <code>for-of</code>, <code>while</code>, and <code>do-while</code>.
+    </p>
+    <p>
+      For loops are commonly used for iterating over a sequence of numbers or a list of items. For-in loops are used for iterating over the properties of an object, and for-of loops are used for iterating over iterable objects such as arrays and strings. Understanding how to use loops effectively is essential for writing efficient and readable code in JavaScript.
+    </p>
+    <p>
+      We will discuss while and do-while loops in our next tutorial.
+    </p>
+    <hr>
+    <a
+      href="https://replit.com/@ramrohit9701/10whileloops"
+      rel="noopener"
+      target="_blank"
+      >Go to next lecture</a
+    >
+    <script>
+      function copyToClipboard(button) {
+        const pre = button.nextElementSibling;
+        const textToCopy = pre.textContent;
+        navigator.clipboard
+          .writeText(textToCopy)
+          .then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => {
+              button.textContent = "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      }
+    </script>
+  </body>
+</html>
+
