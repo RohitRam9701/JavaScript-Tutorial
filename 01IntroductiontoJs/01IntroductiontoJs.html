@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -38,17 +37,16 @@
 
       .container {
         display: flex;
-        /* Establishes a flex container */
         align-items: center;
-        /* Centers items vertically */
+        flex-wrap: wrap;
       }
 
-      /* Optional: Add some styling to the video container */
+      /* Video container styling */
       .video-container {
         position: relative;
         flex: 1.5;
-        /* Allows video container to grow and shrink */
-        padding-bottom: 38.25%;
+        padding-bottom: 35%;
+        min-width: 625px;
       }
 
       .video-container iframe {
@@ -57,20 +55,34 @@
         left: 0;
         width: 100%;
         height: 100%;
-
       }
 
       iframe {
-        height: 430px;
+        height: 380px;
         width: 100%;
         border: none;
       }
 
       .text-container {
         flex: 1;
-        /* Allows text container to grow and shrink */
         padding-left: 20px;
-        /* Adds some space between the text and the video */
+        min-width: 347px;
+      }
+
+      /* Media query to change layout on smaller screens */
+      @media (max-width: 800px) {
+        .container {
+          flex-direction: column; /* Stack items vertically */
+          align-items: center; /* Center items horizontally */
+        }
+
+        .video-container,
+        .text-container {
+          width: 625px; /* Set fixed width for both containers */
+          min-width: 625px; /* Ensure minimum width is 700px to prevent overlay */
+          min-height: 150px;
+          flex: none; /* Prevent flex growth/shrink */
+        }
       }
 
       .pre-container {
@@ -124,19 +136,52 @@
       }
     </style>
   </head>
-
   <body>
     <div class="container">
       <div class="video-container">
-        <iframe title="01IntroductiontoJs" src="https://www.youtube.com/embed/ER9SspLe4Hg"></iframe>
+        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <div id="player"></div>
+
+        <script>
+          // 2. This code loads the IFrame Player API code asynchronously.
+          var tag = document.createElement("script");
+
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName("script")[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // 3. This function creates an <iframe> (and YouTube player)
+          //    after the API code downloads.
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player("player", {
+              height: "390",
+              width: "640",
+              videoId: "ER9SspLe4Hg",
+              playerVars: {
+                playsinline: 1,
+              },
+              events: {
+                onReady: onPlayerReady,
+              },
+            });
+          }
+
+          // 4. The API will call this function when the video player is ready.
+          function onPlayerReady(event) {
+            event.target.playVideo();
+          }
+        </script>
       </div>
       <div class="text-container">
-
         <h1>Practical</h1>
         <hr />
         <p>Watch console panel using Inspect or pressing f12</p>
         <hr />
-        <iframe title="01IntroductiontoJs" src="https://replit.com/@ramrohit9701/01IntroductiontoJs?lite=true"></iframe>
+        <iframe
+          title="01IntroductiontoJs"
+          src="https://replit.com/@ramrohit9701/01IntroductiontoJs?lite=true"
+        ></iframe>
       </div>
     </div>
     <script src="01IntroductiontoJs.js"></script>
@@ -147,22 +192,22 @@
     <h1>Introduction to JavaScript</h1>
     <hr />
     <p>
-      Welcome to the world of JavaScript! Today, having a solid understanding
-      of JavaScript is crucial for anyone who wants to pursue a career in web
+      Welcome to the world of JavaScript! Today, having a solid understanding of
+      JavaScript is crucial for anyone who wants to pursue a career in web
       development. With its versatility and wide-range of applications,
       JavaScript is one of the most important programming languages to learn.
-      But don't worry, we'll start from the basics and gradually raise the
-      bar. By the end of these tutorials, you'll be well on your way to
-      becoming a JavaScript pro.
+      But don't worry, we'll start from the basics and gradually raise the bar.
+      By the end of these tutorials, you'll be well on your way to becoming a
+      JavaScript pro.
     </p>
 
     <h2>What is Programming?</h2>
     <hr />
     <p>
-      Programming is the art of communicating with computers. Just like some
-      of your friends might understand Hindi, others might understand English,
-      computers understand programming. Think of it as a language that we use
-      to tell computers what to do.
+      Programming is the art of communicating with computers. Just like some of
+      your friends might understand Hindi, others might understand English,
+      computers understand programming. Think of it as a language that we use to
+      tell computers what to do.
     </p>
 
     <h2>The Dumb Computer</h2>
@@ -172,16 +217,16 @@
       "dumb." It can only do exactly what you tell it to do, and nothing more.
       This means that you have to be very clear and precise in your
       instructions, or else the computer might do something unexpected. For
-      example, if you asked a person to jump, they would probably know what
-      you meant. But if you asked a computer to jump, it wouldn't have a clue!
+      example, if you asked a person to jump, they would probably know what you
+      meant. But if you asked a computer to jump, it wouldn't have a clue!
     </p>
     <p>
       This might sound like a hindrance, but it's actually one of the things
-      that makes computers so useful. They can perform complex calculations
-      and processes much faster than a person ever could. For example, if you
-      asked a person to solve the equation ( 24 + 5 ), they might take a few
-      seconds to give you the answer of 29. But a computer would solve that
-      equation almost instantly.
+      that makes computers so useful. They can perform complex calculations and
+      processes much faster than a person ever could. For example, if you asked
+      a person to solve the equation ( 24 + 5 ), they might take a few seconds
+      to give you the answer of 29. But a computer would solve that equation
+      almost instantly.
     </p>
 
     <h2>ECMAScript: The Standard Behind JavaScript</h2>
@@ -189,9 +234,9 @@
     <p>
       ECMAScript is the standardized version of JavaScript that helps ensure
       that code written in JavaScript will work the same way on any computer.
-      ECMAScript has come a long way since its inception, with new features
-      and capabilities added with each new release. In most cases,
-      "JavaScript" and "ECMAScript" can be used interchangeably.
+      ECMAScript has come a long way since its inception, with new features and
+      capabilities added with each new release. In most cases, "JavaScript" and
+      "ECMAScript" can be used interchangeably.
     </p>
     <p>
       One of the great things about JavaScript is that it's a very forgiving
@@ -234,8 +279,8 @@
     <p>
       In conclusion, learning JavaScript will open up a world of possibilities
       for you. With its versatility and wide range of applications, there's no
-      limit to what you can accomplish with this powerful programming
-      language. So let's get started!
+      limit to what you can accomplish with this powerful programming language.
+      So let's get started!
     </p>
     <hr />
     <h1>Remember</h1>
@@ -254,7 +299,12 @@
           example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>let x = 5;
 console.log(x);</code></pre>
         </div>
@@ -266,7 +316,12 @@ console.log(x);</code></pre>
           statement. For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>const myFunction = function() {
     // function body
 };</code></pre>
@@ -279,7 +334,12 @@ console.log(x);</code></pre>
           statements with a semicolon. For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>function myFunction() {
     return true;
 }</code></pre>
@@ -292,7 +352,12 @@ console.log(x);</code></pre>
           For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>(function() {
     // code
 })();</code></pre>
@@ -304,8 +369,13 @@ console.log(x);</code></pre>
           parts of a for loop with semicolons. For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-          <pre><code>for (let i = 0; i < 5; i++) {
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
+          <pre><code>for (let i = 0; i &lt; 5; i++) {
     // loop body
 }</code></pre>
         </div>
@@ -316,7 +386,12 @@ console.log(x);</code></pre>
           semicolon. For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>switch (expression) {
   case x:
     // code
@@ -334,7 +409,12 @@ console.log(x);</code></pre>
           example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>const myObject = {
   property1: 'value1',
   property2: 'value2',
@@ -353,9 +433,9 @@ console.log(x);</code></pre>
 
     <p>
       Omitting semicolons in JavaScript is possible in certain cases due to
-      automatic semicolon insertion, but it's essential to understand when
-      it's safe to do so to prevent unintended consequences. Here are the
-      cases where you can omit semicolons in JavaScript:
+      automatic semicolon insertion, but it's essential to understand when it's
+      safe to do so to prevent unintended consequences. Here are the cases where
+      you can omit semicolons in JavaScript:
     </p>
     <ol>
       <li>
@@ -365,7 +445,12 @@ console.log(x);</code></pre>
           it's a valid place to do so. For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>let x = 5
 console.log(x)</code></pre>
         </div>
@@ -377,7 +462,12 @@ console.log(x)</code></pre>
           that the block has ended. For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>if (condition) {
   // code block
 }</code></pre>
@@ -390,7 +480,12 @@ console.log(x)</code></pre>
           example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>let x = 5
 (function() {
   // code
@@ -404,7 +499,12 @@ console.log(x)</code></pre>
           JavaScript interprets these as the end of the statement. For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>function myFunction() {
   return true
 }</code></pre>
@@ -417,7 +517,12 @@ console.log(x)</code></pre>
           For example:
         </p>
         <div class="pre-container">
-          <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
+          <button
+            type="button"
+            title="Copy"
+            class="copy-btn"
+            onclick="copyToClipboard(this)"
+          ></button>
           <pre><code>let x = 5
 x++</code></pre>
         </div>
@@ -427,13 +532,31 @@ x++</code></pre>
       While JavaScript allows for flexibility in these cases, it's generally
       recommended to use semicolons consistently to enhance code clarity and
       prevent potential issues, especially when concatenating or minifying
-      JavaScript code.
+      JavaScript code. const user = getUserInfo(req)
     </p>
     <hr />
-    <br />
-    <a href="https://replit.com/@ramrohit9701/02Variables" target="_blank" rel="noopener">Go to next
-      lecture</a>
-    </div>
+    <a
+      href="https://replit.com/@ramrohit9701/02Variables"
+      target="_blank"
+      rel="noopener"
+      >Go to next lecture</a
+    >
+    <script>
+      function copyToClipboard(button) {
+        const pre = button.nextElementSibling;
+        const textToCopy = pre.textContent;
+        navigator.clipboard
+          .writeText(textToCopy)
+          .then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => {
+              button.textContent = "";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      }
+    </script>
   </body>
-
 </html>

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,17 +40,16 @@
 
             .container {
                 display: flex;
-                /* Establishes a flex container */
                 align-items: center;
-                /* Centers items vertically */
+                flex-wrap: wrap;
             }
 
-            /* Optional: Add some styling to the video container */
+            /* Video container styling */
             .video-container {
                 position: relative;
                 flex: 1.5;
-                /* Allows video container to grow and shrink */
-                padding-bottom: 38.25%;
+                padding-bottom: 35%;
+                min-width: 625px;
             }
 
             .video-container iframe {
@@ -60,20 +58,33 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-
             }
 
             iframe {
-                height: 430px;
+                height: 380px;
                 width: 100%;
                 border: none;
             }
 
             .text-container {
                 flex: 1;
-                /* Allows text container to grow and shrink */
                 padding-left: 20px;
-                /* Adds some space between the text and the video */
+                min-width: 347px;
+            }
+
+            /* Media query to change layout on smaller screens */
+            @media (max-width: 800px) {
+                .container {
+                    flex-direction: column; /* Stack items vertically */
+                    align-items: center; /* Center items horizontally */
+                }
+                .video-container,
+                .text-container {
+                    width: 625px; /* Set fixed width for both containers */
+                    min-width: 625px; /* Ensure minimum width is 700px to prevent overlay */
+                    min-height: 150px;
+                    flex: none; /* Prevent flex growth/shrink */
+                }
             }
 
             .pre-container {
@@ -149,120 +160,179 @@
             }
         </style>
     </head>
+    <body>
+        <div class="container">
+            <div class="video-container">
+                <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+                <div id="player"></div>
 
-    <div class="container">
-        <div class="video-container">
-            <iframe title="03varletconst" src="https://www.youtube.com/embed/Icev9Oxf0WA"></iframe>
+                <script>
+                    // 2. This code loads the IFrame Player API code asynchronously.
+                    var tag = document.createElement("script");
+
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    var firstScriptTag =
+                        document.getElementsByTagName("script")[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    // 3. This function creates an <iframe> (and YouTube player)
+                    //    after the API code downloads.
+                    var player;
+                    function onYouTubeIframeAPIReady() {
+                        player = new YT.Player("player", {
+                            height: "390",
+                            width: "640",
+                            videoId: "Icev9Oxf0WA",
+                            playerVars: {
+                                playsinline: 1,
+                            },
+                            events: {
+                                onReady: onPlayerReady,
+                            },
+                        });
+                    }
+
+                    // 4. The API will call this function when the video player is ready.
+                    function onPlayerReady(event) {
+                        event.target.playVideo();
+                    }
+                </script>
+            </div>
+            <div class="text-container">
+                <h1>Practical</h1>
+                <hr />
+                <p>Watch console panel using Inspect or pressing f12</p>
+                <hr />
+                <iframe
+                    title="03varletconst"
+                    src="https://replit.com/@ramrohit9701/03varletconst?lite=true"
+                ></iframe>
+            </div>
         </div>
-        <div class="text-container">
+        <p>Conclusions are:</p>
+        <ul>
+            <li>
+                var can be redeclared and updated, while let can only be updated
+                but not redeclared, and const can neither be updated nor
+                redeclared.
+            </li>
+            <li>we have to use let and const instead of var.</li>
+            <li>we have to use const most of the time.</li>
+            <li>
+                we must think of scope of variables if we are going to use var.
+            </li>
+        </ul>
+        <script src="03varletconst.js"></script>
+        <hr />
+        <h1>Theory</h1>
+        <hr />
+        <hr />
+        <h1>Variables</h1>
+        <hr />
+        <h2>var, let and const</h2>
+        <hr />
+        <p>
+            In the previous video, we learned about syntax, types of languages,
+            comments, and variables. In this chapter, we will learn about the
+            <code>var</code>, <code>let</code>, and <code>const</code> keywords
+            and how to declare variables using them.
+        </p>
 
-            <h1>Practical</h1>
-            <hr />
-            <p>Watch console panel using Inspect or pressing f12</p>
-            <hr />
-            <iframe title="03varletconst" src="https://replit.com/@ramrohit9701/03varletconst?lite=true"></iframe>
-        </div>
-    </div>
-    <p>Conclusions are:</p>
-    <ul>
-        <li>var can be redeclared and updated, while let can only be updated but not redeclared, and const can neither
-            be updated nor redeclared.</li>
-        <li>we have to use let and const instead of var.</li>
-        <li>we have to use const most of the time.</li>
-        <li>we must think of scope of variables if we are going to use var.</li>
-    </ul>
-    <script src="03varletconst.js"></script>
-    <hr>
-    <h1>Theory</h1>
-    <hr />
-    <hr>
-    <h1>Variables</h1>
-    <hr />
-    <h2>var, let and const</h2>
-    <hr />
-    <p>
-        In the previous video, we learned about syntax, types of
-        languages, comments, and variables. In this chapter, we will
-        learn about the <code>var</code>, <code>let</code>, and
-        <code>const</code> keywords and how to declare variables using
-        them.
-    </p>
+        <h1>var, let and const</h1>
+        <hr />
+        <p>
+            In JavaScript, there are three keywords that are used to declare
+            variables: <code>var</code>, <code>let</code>, and
+            <code>const</code>. The <code>var</code> keyword was used to declare
+            variables in JavaScript before the <code>let</code> and
+            <code>const</code> keywords were introduced. The
+            <code>let</code> and <code>const</code> keywords were introduced in
+            ES6 (ECMAScript 6). ES6 is the latest version of JavaScript. It was
+            released in 2015. ES6 introduced a lot of new features to
+            JavaScript. We will learn about some of them in this course.
+        </p>
 
-    <h1>var, let and const</h1>
-    <hr />
-    <p>
-        In JavaScript, there are three keywords that are used to declare
-        variables: <code>var</code>, <code>let</code>, and
-        <code>const</code>. The <code>var</code> keyword was used to
-        declare variables in JavaScript before the <code>let</code> and
-        <code>const</code> keywords were introduced. The
-        <code>let</code> and <code>const</code> keywords were introduced
-        in ES6 (ECMAScript 6). ES6 is the latest version of JavaScript.
-        It was released in 2015. ES6 introduced a lot of new features to
-        JavaScript. We will learn about some of them in this course.
-    </p>
-
-    <h1>var</h1>
-    <hr />
-    <p>
-        The <code>var</code> keyword is used to declare variables in
-        JavaScript. Here's an example:
-    </p>
-    <div class="pre-container">
-        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-        <pre><code>var name = "Harry";
+        <h1>var</h1>
+        <hr />
+        <p>
+            The <code>var</code> keyword is used to declare variables in
+            JavaScript. Here's an example:
+        </p>
+        <div class="pre-container">
+            <button
+                type="button"
+                title="Copy"
+                class="copy-btn"
+                onclick="copyToClipboard(this)"
+            ></button>
+            <pre><code>var name = "Harry";
 console.log(name); //output: Harry</code></pre>
-    </div>
-    <p>
-        We can also reassign the value of a variable declared using the
-        <code>var</code> keyword:
-    </p>
-    <div class="pre-container">
-        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-        <pre><code>var name = "Harry";
+        </div>
+        <p>
+            We can also reassign the value of a variable declared using the
+            <code>var</code> keyword:
+        </p>
+        <div class="pre-container">
+            <button
+                type="button"
+                title="Copy"
+                class="copy-btn"
+                onclick="copyToClipboard(this)"
+            ></button>
+            <pre><code>var name = "Harry";
 name = "Ron";
 console.log(name); //output: Ron</code></pre>
-    </div>
-    <p>
-        One important thing to note about <code>var</code> is that it
-        has block scope. This means that if a variable is declared with
-        <code>var</code> inside a function, it is accessible anywhere
-        within that block.
-    </p>
-    <p>
-        Note: Block scope will be discussed in the upcoming videos. For
-        now, just remember that anything inside curly braces
-        <code>{}</code> is a block.
-    </p>
-    <p>Here's an example:</p>
-    <div class="pre-container">
-        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-        <pre><code>var name = "Harry";
+        </div>
+        <p>
+            One important thing to note about <code>var</code> is that it has
+            block scope. This means that if a variable is declared with
+            <code>var</code> inside a function, it is accessible anywhere within
+            that block.
+        </p>
+        <p>
+            Note: Block scope will be discussed in the upcoming videos. For now,
+            just remember that anything inside curly braces
+            <code>{}</code> is a block.
+        </p>
+        <p>Here's an example:</p>
+        <div class="pre-container">
+            <button
+                type="button"
+                title="Copy"
+                class="copy-btn"
+                onclick="copyToClipboard(this)"
+            ></button>
+            <pre><code>var name = "Harry";
 {
     var name = "Ron";
     console.log(name); //output: Ron
 }
 console.log(name); //output: Ron</code></pre>
-    </div>
-    <p>
-        This is the reason why the <code>var</code> keyword is not
-        recommended to be used anymore. It can lead to unexpected
-        results. Instead, we make use of the <code>let</code> and
-        <code>const</code> keywords.
-    </p>
+        </div>
+        <p>
+            This is the reason why the <code>var</code> keyword is not
+            recommended to be used anymore. It can lead to unexpected results.
+            Instead, we make use of the <code>let</code> and
+            <code>const</code> keywords.
+        </p>
 
-    <h1>let</h1>
-    <hr />
-    <p>
-        The <code>let</code> keyword is used to declare variables in
-        JavaScript and has block scope. This means that if a variable is
-        declared with <code>let</code> inside a block, it is only
-        accessible within that block.
-    </p>
-    <p>Here's an example:</p>
-    <div class="pre-container">
-        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-        <pre><code>let a = 29;
+        <h1>let</h1>
+        <hr />
+        <p>
+            The <code>let</code> keyword is used to declare variables in
+            JavaScript and has block scope. This means that if a variable is
+            declared with <code>let</code> inside a block, it is only accessible
+            within that block.
+        </p>
+        <p>Here's an example:</p>
+        <div class="pre-container">
+            <button
+                type="button"
+                title="Copy"
+                class="copy-btn"
+                onclick="copyToClipboard(this)"
+            ></button>
+            <pre><code>let a = 29;
 
 let b = "Harry";
 {
@@ -270,223 +340,331 @@ let b = "this";
 console.log(b); //output: this
 }
 console.log(b); //output: Harry</code></pre>
-    </div>
+        </div>
 
-    <h1>const</h1>
-    <hr />
-    <p>
-        The <code>const</code> keyword is used to declare variables in
-        JavaScript and is used when you don't want to reassign the
-        variable. The value of a variable declared with
-        <code>const</code> cannot be changed.
-    </p>
-    <p>Here's an example:</p>
-    <div class="pre-container">
-        <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-        <pre><code>const name = "Harry";
+        <h1>const</h1>
+        <hr />
+        <p>
+            The <code>const</code> keyword is used to declare variables in
+            JavaScript and is used when you don't want to reassign the variable.
+            The value of a variable declared with <code>const</code> cannot be
+            changed.
+        </p>
+        <p>Here's an example:</p>
+        <div class="pre-container">
+            <button
+                type="button"
+                title="Copy"
+                class="copy-btn"
+                onclick="copyToClipboard(this)"
+            ></button>
+            <pre><code>const name = "Harry";
 name = "this";
 console.log(name); //output: Uncaught TypeError: Assignment to constant variable.</code></pre>
-    </div>
+        </div>
 
-    <h1>Differences</h1>
-    <hr />
-    <table>
-        <tr>
-            <th></th>
-            <th>Block scoped</th>
-            <th>Hoisting</th>
-            <th>Reassignment</th>
-            <th>Initialization</th>
-        </tr>
-        <tr>
-            <td><code>let</code></td>
-            <td>Yes</td>
-            <td>No</td>
-            <td>Yes</td>
-            <td>Optional</td>
-        </tr>
-        <tr>
-            <td><code>var</code></td>
-            <td>No</td>
-            <td>Yes</td>
-            <td>Yes</td>
-            <td>Optional</td>
-        </tr>
-        <tr>
-            <td><code>const</code></td>
-            <td>Yes</td>
-            <td>No</td>
-            <td>No</td>
-            <td>Required</td>
-        </tr>
-    </table>
-    <ul>
-        <li>
-            <p>
-                <b>Block scoped:</b> <code>let</code> and
-                <code>const</code> are block-scoped, meaning they are
-                only accessible within the block they were defined in,
-                while <code>var</code> is function-scoped, meaning it is
-                accessible within the entire function it was defined in.
-            </p>
-        </li>
-        <li>
-            <p>
-                <b>Hoisting:</b> <code>let</code> and
-                <code>const</code> are not hoisted, meaning they cannot
-                be accessed before they are declared, while
-                <code>var</code> is hoisted, meaning it can be accessed
-                before it is declared (although it will have a value of
-                undefined).
-            </p>
-        </li>
-        <li>
-            <p>
-                <b>Reassignment:</b> <code>let</code> and
-                <code>var</code> can be reassigned to a new value, while
-                <code>const</code> cannot be reassigned.
-            </p>
-        </li>
-        <li>
-            <p>
-                <b>Initialization:</b> <code>let</code> and
-                <code>var</code> can be declared without being
-                initialized, while <code>const</code> must be
-                initialized with a value when it is declared.
-            </p>
-        </li>
-    </ul>
-    <h1>Best Practices</h1>
-    <hr />
-    <p>
-        Now we know everything about the variables in JavaScript. Let's
-        look at some best practices that we should follow while
-        declaring variables in JavaScript to make our code more readable
-        and maintainable.
-    </p>
-    <ol>
-        <li>
-            <p>
-                <b>Use descriptive and meaningful variable names:</b>
-                Choose variable names that clearly describe the value
-                they hold. This makes your code easier to read and
-                understand.
-            </p>
-            <div class="pre-container">
-                <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-                <pre><code>const a = "Harry"; //bad
+        <h1>Differences</h1>
+        <hr />
+        <table>
+            <tr>
+                <th>Variable</th>
+                <th>Block scoped</th>
+                <th>Hoisting</th>
+                <th>Reassignment</th>
+                <th>Initialization</th>
+            </tr>
+            <tr>
+                <td><code>let</code></td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td><code>var</code></td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td><code>const</code></td>
+                <td>Yes</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Required</td>
+            </tr>
+        </table>
+        <ul>
+            <li>
+                <p>
+                    <b>Block scoped:</b> <code>let</code> and
+                    <code>const</code> are block-scoped, meaning they are only
+                    accessible within the block they were defined in, while
+                    <code>var</code> is function-scoped, meaning it is
+                    accessible within the entire function it was defined in.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Hoisting:</b> <code>let</code> and <code>const</code> are
+                    not hoisted, meaning they cannot be accessed before they are
+                    declared, while <code>var</code> is hoisted, meaning it can
+                    be accessed before it is declared (although it will have a
+                    value of undefined).
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Reassignment:</b> <code>let</code> and
+                    <code>var</code> can be reassigned to a new value, while
+                    <code>const</code> cannot be reassigned.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Initialization:</b> <code>let</code> and
+                    <code>var</code> can be declared without being initialized,
+                    while <code>const</code> must be initialized with a value
+                    when it is declared.
+                </p>
+            </li>
+        </ul>
+        <h1>Best Practices</h1>
+        <hr />
+        <p>
+            Now we know everything about the variables in JavaScript. Let's look
+            at some best practices that we should follow while declaring
+            variables in JavaScript to make our code more readable and
+            maintainable.
+        </p>
+        <ol>
+            <li>
+                <p>
+                    <b>Use descriptive and meaningful variable names:</b>
+                    Choose variable names that clearly describe the value they
+                    hold. This makes your code easier to read and understand.
+                </p>
+                <div class="pre-container">
+                    <button
+                        type="button"
+                        title="Copy"
+                        class="copy-btn"
+                        onclick="copyToClipboard(this)"
+                    ></button>
+                    <pre><code>const a = "Harry"; //bad
 const name = "Harry"; //good</code></pre>
-            </div>
-        </li>
-        <li>
-            <p>
-                <b>Use camelCase to name your variables:</b> This makes
-                your code easier to read and understand.
-            </p>
-            <div class="pre-container">
-                <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-                <pre><code>const myName = "Harry"; //good
+                </div>
+            </li>
+            <li>
+                <p>
+                    When combining two words for variable names in JavaScript,
+                    you can follow these conventions:
+                </p>
+                <ol>
+                    <li>
+                        <p><b>Camel Case:</b></p>
+                        <ul>
+                            <li>
+                                <p>
+                                    In camel case, you capitalize the first
+                                    letter of each word except the first one.
+                                    It’s commonly used in JavaScript.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Examples: <code>myVariableName</code>,
+                                    <code>userName</code>,
+                                    <code>totalAmount</code>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><b>Pascal Case:</b></p>
+                        <ul>
+                            <li>
+                                <p>
+                                    Similar to camel case, but the first letter
+                                    is also capitalized.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Often used for naming classes or constructor
+                                    functions.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Examples: <code>MyClass</code>,
+                                    <code>PersonDetails</code>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><b>Snake Case:</b></p>
+                        <ul>
+                            <li>
+                                <p>Use underscores (_) to separate words.</p>
+                            </li>
+                            <li>
+                                <p>Common in some programming languages.</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Examples: <code>my_variable_name</code>,
+                                    <code>user_name</code>,
+                                    <code>total_amount</code>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p><b>Kebab Case (also known as spinal case):</b></p>
+                        <ul>
+                            <li><p>Use hyphens (-) to separate words.</p></li>
+                            <li>
+                                <p>Often used in URLs or CSS class names.</p>
+                            </li>
+                            <li>
+                                <p>
+                                    Examples: <code>my-variable-name</code>,
+                                    <code>user-name</code>,
+                                    <code>total-amount</code>
+                                </p>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>
+                    <b>Use camelCase to name your variables:</b> This makes your
+                    code easier to read and understand.
+                </p>
+                <div class="pre-container">
+                    <button
+                        type="button"
+                        title="Copy"
+                        class="copy-btn"
+                        onclick="copyToClipboard(this)"
+                    ></button>
+                    <pre><code>const myName = "Harry"; //good
 const myname = "Harry"; //bad</code></pre>
-            </div>
-        </li>
-        <li>
-            <p>
-                <b>Use <code>const</code> by default and only use
-                    <code>let</code> if you need to reassign the
-                    variable:</b>
-                Avoid using <code>var</code>.
-            </p>
-            <div class="pre-container">
-                <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-                <pre><code>const name = "Harry"; //good
+                </div>
+            </li>
+            <li>
+                <p>
+                    <b
+                        >Use <code>const</code> by default and only use
+                        <code>let</code> if you need to reassign the
+                        variable:</b
+                    >
+                    Avoid using <code>var</code>.
+                </p>
+                <div class="pre-container">
+                    <button
+                        type="button"
+                        title="Copy"
+                        class="copy-btn"
+                        onclick="copyToClipboard(this)"
+                    ></button>
+                    <pre><code>const name = "Harry"; //good
 let temporary = 29; //good
 var name = "Harry"; //bad</code></pre>
-            </div>
-        </li>
-        <li>
-            <p>
-                <b>Declare variables at the top of their scope:</b> To
-                make your code more readable, it's best to declare
-                variables at the top of their scope. This makes it
-                easier to see what variables are in scope and what
-                values they hold.
-            </p>
-            <div class="pre-container">
-                <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-                <pre>
-                        <code>
-//good:
+                </div>
+            </li>
+            <li>
+                <p>
+                    <b>Declare variables at the top of their scope:</b> To make
+                    your code more readable, it's best to declare variables at
+                    the top of their scope. This makes it easier to see what
+                    variables are in scope and what values they hold.
+                </p>
+                <div class="pre-container">
+                    <button
+                        type="button"
+                        title="Copy"
+                        class="copy-btn"
+                        onclick="copyToClipboard(this)"
+                    ></button>
+                    <pre><code>//good:
 {
     const name = "Harry";
     const hobby = "programming";
-                            
+
     console.log("My name is " + name + " and I love " + hobby); // output: My name is Harry and I love programming }
 //bad:
 {
     console.log("My name is " + name + " and I love " + hobby); // output: My name is undefined and I love undefined
     const name = "Harry";
     const hobby = "programming";
-}   
-                        </code>
-                    </pre>
-            </div>
-        </li>
-        <li>
-            <p>
-                <b>Use <code>const</code> whenever possible:</b> If you
-                know that a variable will not change, use
-                <code>const</code> to declare it. This helps to prevent
-                bugs in your code that could occur if you accidentally
-                reassign a value to a variable that should not change.
-            </p>
-            <div class="pre-container">
-                <button type="button" title="Copy" class="copy-btn" onclick="copyToClipboard(this)"></button>
-                <pre><code>const name = "Harry"; //good
+}</code></pre>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <b>Use <code>const</code> whenever possible:</b> If you know
+                    that a variable will not change, use <code>const</code> to
+                    declare it. This helps to prevent bugs in your code that
+                    could occur if you accidentally reassign a value to a
+                    variable that should not change.
+                </p>
+                <div class="pre-container">
+                    <button
+                        type="button"
+                        title="Copy"
+                        class="copy-btn"
+                        onclick="copyToClipboard(this)"
+                    ></button>
+                    <pre><code>const name = "Harry"; //good
 let name = "Harry"; //fine but const is better because we know that the value of name will not change
 var name = "Harry"; //bad</code></pre>
-            </div>
-        </li>
-    </ol>
-    <h1>Conclusion</h1>
-    <hr />
-    <p>
-        Variables are an essential part of JavaScript programming. They
-        allow us to store and manipulate data in our code. In
-        JavaScript, we can declare variables using the <code>var</code>,
-        <code>let</code>, and <code>const</code> keywords. While the
-        <code>var</code> keyword has block scope, it can lead to
-        unexpected results and is no longer recommended. Instead, we
-        should use the <code>let</code> and <code>const</code> keywords,
-        with <code>const</code> being the preferred option whenever
-        possible. When declaring variables, we should follow best
-        practices like using descriptive names, using camelCase,
-        declaring variables at the top of their scope, and using
-        <code>const</code> by default. By following these practices, we
-        can make our code more readable and maintainable.
-    </p>
-    <p>
-        <hr><br>
-        <a href="https://replit.com/@ramrohit9701/04primitivesobjects" target="_blank" rel="noopener">Go to next
-            lecture</a>
-    </p>
-
-    <script>
-        function copyToClipboard(button) {
-            const pre = button.nextElementSibling;
-            const textToCopy = pre.textContent;
-            navigator.clipboard
-                .writeText(textToCopy)
-                .then(() => {
-                    button.textContent = "Copied!";
-                    setTimeout(() => {
-                        button.textContent = "";
-                    }, 2000);
-                })
-                .catch((err) => {
-                    console.error("Failed to copy: ", err);
-                });
-        }
-    </script>
+                </div>
+            </li>
+        </ol>
+        <h1>Conclusion</h1>
+        <hr />
+        <p>
+            Variables are an essential part of JavaScript programming. They
+            allow us to store and manipulate data in our code. In JavaScript, we
+            can declare variables using the <code>var</code>, <code>let</code>,
+            and <code>const</code> keywords. While the <code>var</code> keyword
+            has block scope, it can lead to unexpected results and is no longer
+            recommended. Instead, we should use the <code>let</code> and
+            <code>const</code> keywords, with <code>const</code> being the
+            preferred option whenever possible. When declaring variables, we
+            should follow best practices like using descriptive names, using
+            camelCase, declaring variables at the top of their scope, and using
+            <code>const</code> by default. By following these practices, we can
+            make our code more readable and maintainable.
+        </p>
+        <hr />
+        <p>
+            <a
+                href="https://replit.com/@ramrohit9701/04primitivesobjects"
+                target="_blank"
+                rel="noopener"
+                >Go to next lecture</a
+            >
+        </p>
+        <script>
+            function copyToClipboard(button) {
+                const pre = button.nextElementSibling;
+                const textToCopy = pre.textContent;
+                navigator.clipboard
+                    .writeText(textToCopy)
+                    .then(() => {
+                        button.textContent = "Copied!";
+                        setTimeout(() => {
+                            button.textContent = "";
+                        }, 2000);
+                    })
+                    .catch((err) => {
+                        console.error("Failed to copy: ", err);
+                    });
+            }
+        </script>
     </body>
-
 </html>

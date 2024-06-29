@@ -2,11 +2,13 @@ console.log("Note: View Files from this Repl to Access the Source Code");
 console.log("This program adds 1, 2 and 54");
 
 function addThreeNumbers(a, b, c) {
-   return a + b + c;
+  return a + b + c;
 }
 let c = addThreeNumbers(1, 2, 54);
 console.log(c);
-console.log("This repl contains code for the ultimate javascript course video no 2");
+console.log(
+  "This repl contains code for the ultimate javascript course video no 2"
+);
 
 /*
  In JavaScript, semicolons are used to terminate statements. While JavaScript allows you to omit semicolons in some cases due 

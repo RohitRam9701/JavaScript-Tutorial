@@ -1,9 +1,0 @@
-// replit shortcut tricks:
-// press alt and left-click on another the lines to get multiple cursors
-// use `alt+up/down arrow` to move the line up/down when cursor blinking on the line accordingly.
-// use `alt+left/right arrow` to move the cursor after each word or symbol left/right when cursor blinking on the line accordingly.
-// use `alt+shift+down arrow/up arrow` to copy the line below/above the current line accordingly.
-// use `alt+shift+left/right arrow` to copy the word left/right when cursor blinking on the word accordingly.
-// To comment or uncomment out any code, press `ctrl+/`
-// use ` alt+ctrl+ ' or, ` or, [ `  to put statement in ', or, `, or, brackets [].
-// Similarly, use ` alt+ctrl+shift+( or, { or, " ` to put the selected statement in brackets (), or, in {}, or, in "". shift is used here as (), {}, "" are accessed by pressing shift on keyboard.

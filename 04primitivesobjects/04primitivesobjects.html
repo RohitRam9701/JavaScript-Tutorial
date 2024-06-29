@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,17 +36,16 @@
 
       .container {
         display: flex;
-        /* Establishes a flex container */
         align-items: center;
-        /* Centers items vertically */
+        flex-wrap: wrap;
       }
 
-      /* Optional: Add some styling to the video container */
+      /* Video container styling */
       .video-container {
         position: relative;
         flex: 1.5;
-        /* Allows video container to grow and shrink */
-        padding-bottom: 38.25%;
+        padding-bottom: 35%;
+        min-width: 625px;
       }
 
       .video-container iframe {
@@ -58,16 +57,31 @@
       }
 
       iframe {
-        height: 430px;
+        height: 380px;
         width: 100%;
         border: none;
       }
 
       .text-container {
         flex: 1;
-        /* Allows text container to grow and shrink */
         padding-left: 20px;
-        /* Adds some space between the text and the video */
+        min-width: 347px;
+      }
+
+      /* Media query to change layout on smaller screens */
+      @media (max-width: 800px) {
+        .container {
+          flex-direction: column; /* Stack items vertically */
+          align-items: center; /* Center items horizontally */
+        }
+
+        .video-container,
+        .text-container {
+          width: 625px; /* Set fixed width for both containers */
+          min-width: 625px; /* Ensure minimum width is 700px to prevent overlay */
+          min-height: 150px;
+          flex: none; /* Prevent flex growth/shrink */
+        }
       }
 
       .pre-container {
@@ -120,9 +134,39 @@
   <body>
     <div class="container">
       <div class="video-container">
-        <iframe
-          title="04primitivesobjects"
-          src="https://www.youtube.com/embed/qpU3WIqRz9I"></iframe>
+        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <div id="player"></div>
+
+        <script>
+          // 2. This code loads the IFrame Player API code asynchronously.
+          var tag = document.createElement("script");
+
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName("script")[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // 3. This function creates an <iframe> (and YouTube player)
+          //    after the API code downloads.
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player("player", {
+              height: "390",
+              width: "640",
+              videoId: "qpU3WIqRz9I",
+              playerVars: {
+                playsinline: 1,
+              },
+              events: {
+                onReady: onPlayerReady,
+              },
+            });
+          }
+
+          // 4. The API will call this function when the video player is ready.
+          function onPlayerReady(event) {
+            event.target.playVideo();
+          }
+        </script>
       </div>
       <div class="text-container">
         <h1>Practical</h1>
@@ -131,7 +175,8 @@
         <hr />
         <iframe
           title="04primitivesobjects"
-          src="https://replit.com//@ramrohit9701/04primitivesobjects?lite=true"></iframe>
+          src="https://replit.com//@ramrohit9701/04primitivesobjects?lite=true"
+        ></iframe>
       </div>
     </div>
     <script src="04primitivesobjects.js"></script>
@@ -164,7 +209,8 @@
         type="button"
         title="Copy"
         class="copy-btn"
-        onclick="copyToClipboard(this)"></button>
+        onclick="copyToClipboard(this)"
+      ></button>
       <pre><code>let nullVar = null;
 let numVar = 29;
 let boolVar = true;
@@ -189,7 +235,8 @@ let undefinedVar = undefined;</code></pre>
         type="button"
         title="Copy"
         class="copy-btn"
-        onclick="copyToClipboard(this)"></button>
+        onclick="copyToClipboard(this)"
+      ></button>
       <pre><code>let nullVar = null; // value is intentionally nothing
 let undefinedVar; // value is undefined or not defined</code></pre>
     </div>
@@ -204,7 +251,8 @@ let undefinedVar; // value is undefined or not defined</code></pre>
         type="button"
         title="Copy"
         class="copy-btn"
-        onclick="copyToClipboard(this)"></button>
+        onclick="copyToClipboard(this)"
+      ></button>
       <pre><code>console.log(typeof numVar); // Output: number
 console.log(typeof strVar); // Output: string</code></pre>
     </div>
@@ -220,7 +268,8 @@ console.log(typeof strVar); // Output: string</code></pre>
         type="button"
         title="Copy"
         class="copy-btn"
-        onclick="copyToClipboard(this)"></button>
+        onclick="copyToClipboard(this)"
+      ></button>
       <pre><code>const bioData = {
     name: "Harry",
     age: 29,
@@ -237,7 +286,8 @@ console.log(typeof strVar); // Output: string</code></pre>
         type="button"
         title="Copy"
         class="copy-btn"
-        onclick="copyToClipboard(this)"></button>
+        onclick="copyToClipboard(this)"
+      ></button>
       <pre><code>console.log(bioData["name"]); // Output: Harry
 console.log(bioData.age); // Output: 29
 console.log(bioData["pet"]); // Output: undefined</code></pre>
@@ -264,7 +314,8 @@ console.log(bioData["pet"]); // Output: undefined</code></pre>
         type="button"
         title="Copy"
         class="copy-btn"
-        onclick="copyToClipboard(this)"></button>
+        onclick="copyToClipboard(this)"
+      ></button>
       <pre><code>const harryMarks = {
     english: 100,
     maths: 80,

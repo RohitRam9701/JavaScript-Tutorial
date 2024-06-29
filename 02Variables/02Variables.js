@@ -1,4 +1,6 @@
-console.log("This repl contains code for the Ultimate JavaScript course video no 2");
+console.log(
+  "This repl contains code for the Ultimate JavaScript course video no 2"
+);
 let a = 67; // a contains 67
 console.log(a);
 a = "harry";
@@ -12,5 +14,5 @@ b = 8;
 console.log(b);
 var name = "Harry";
 var Name = "Ron";
-console.log(name); // will print "Harry" // do not use name as a variable name, now it is a reserved keyword
+console.log(name); // will print "Harry" // do not use name as a variable name, now it is deprecated. (typescript)
 console.log(Name); // will print "Ron"

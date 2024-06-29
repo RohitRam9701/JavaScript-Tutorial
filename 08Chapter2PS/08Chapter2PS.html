@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,6 +22,7 @@
       h1 {
         font-size: 24px;
         margin-bottom: 20px;
+        text-align: center;
       }
 
       h2 {
@@ -69,17 +70,16 @@
 
       .container {
         display: flex;
-        /* Establishes a flex container */
         align-items: center;
-        /* Centers items vertically */
+        flex-wrap: wrap;
       }
 
-      /* Optional: Add some styling to the video container */
+      /* Video container styling */
       .video-container {
         position: relative;
         flex: 1.5;
-        /* Allows video container to grow and shrink */
-        padding-bottom: 38.25%;
+        padding-bottom: 35%;
+        min-width: 625px;
       }
 
       .video-container iframe {
@@ -91,16 +91,31 @@
       }
 
       iframe {
-        height: 430px;
+        height: 380px;
         width: 100%;
         border: none;
       }
 
       .text-container {
         flex: 1;
-        /* Allows text container to grow and shrink */
         padding-left: 20px;
-        /* Adds some space between the text and the video */
+        min-width: 347px;
+      }
+
+      /* Media query to change layout on smaller screens */
+      @media (max-width: 800px) {
+        .container {
+          flex-direction: column; /* Stack items vertically */
+          align-items: center; /* Center items horizontally */
+        }
+
+        .video-container,
+        .text-container {
+          width: 625px; /* Set fixed width for both containers */
+          min-width: 625px; /* Ensure minimum width is 700px to prevent overlay */
+          min-height: 150px;
+          flex: none; /* Prevent flex growth/shrink */
+        }
       }
 
       .copy-btn {
@@ -134,9 +149,39 @@
   <body>
     <div class="container">
       <div class="video-container">
-        <iframe
-          title="08Chapter2PS"
-          src="https://www.youtube.com/embed/W77qmqrhCcA"></iframe>
+        <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+        <div id="player"></div>
+
+        <script>
+          // 2. This code loads the IFrame Player API code asynchronously.
+          var tag = document.createElement("script");
+
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName("script")[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // 3. This function creates an <iframe> (and YouTube player)
+          //    after the API code downloads.
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player("player", {
+              height: "390",
+              width: "640",
+              videoId: "W77qmqrhCcA",
+              playerVars: {
+                playsinline: 1,
+              },
+              events: {
+                onReady: onPlayerReady,
+              },
+            });
+          }
+
+          // 4. The API will call this function when the video player is ready.
+          function onPlayerReady(event) {
+            event.target.playVideo();
+          }
+        </script>
       </div>
       <div class="text-container">
         <h1>Practical</h1>
@@ -145,15 +190,16 @@
         <hr />
         <iframe
           title="08Chapter2PS"
-          src="https://replit.com/@ramrohit9701/08Chapter2PS?lite=true"></iframe>
+          src="https://replit.com/@ramrohit9701/08Chapter2PS?lite=true"
+        ></iframe>
       </div>
     </div>
     <script src="08Chapter2PS.js"></script>
     <p>
       Note: If any of the prompts isn't functioning as expected in your current
-      browser, consider trying a different browser (like Firefox). Sometimes, certain features
-      may behave differently across browsers due to variations in their
-      rendering engines and JavaScript support.
+      browser, consider trying a different browser (like Firefox). Sometimes,
+      certain features may behave differently across browsers due to variations
+      in their rendering engines and JavaScript support.
     </p>
     <hr />
 
@@ -178,9 +224,10 @@
           type="button"
           title="Copy"
           class="copy-btn"
-          onclick="copyToClipboard(this)"></button>
+          onclick="copyToClipboard(this)"
+        ></button>
         <pre><code>let age = prompt("Enter your age");
-if (age >= 10 && age <= 20) {
+if (age >= 10 && age &lt;= 20) {
   console.log("You are between 10 and 20");
 } else {
   console.log("You are not between 10 and 20");
@@ -210,7 +257,8 @@ if (age >= 10 && age <= 20) {
           type="button"
           title="Copy"
           class="copy-btn"
-          onclick="copyToClipboard(this)"></button>
+          onclick="copyToClipboard(this)"
+        ></button>
         <pre><code>let day = prompt("Enter a day");
 switch (day) {
   case "Monday":
@@ -275,7 +323,8 @@ switch (day) {
           type="button"
           title="Copy"
           class="copy-btn"
-          onclick="copyToClipboard(this)"></button>
+          onclick="copyToClipboard(this)"
+        ></button>
         <pre><code>let num = prompt("Enter a number");
 if (num % 2 == 0 && num % 3 == 0) {
   console.log("The number is divisible by 2 and 3");
@@ -310,7 +359,8 @@ if (num % 2 == 0 && num % 3 == 0) {
           type="button"
           title="Copy"
           class="copy-btn"
-          onclick="copyToClipboard(this)"></button>
+          onclick="copyToClipboard(this)"
+        ></button>
         <pre><code>let num = prompt("Enter a number");
 if (num % 2 == 0 || num % 3 == 0) {
   console.log("The number is divisible by 2 or 3");
@@ -350,7 +400,8 @@ if (num % 2 == 0 || num % 3 == 0) {
           type="button"
           title="Copy"
           class="copy-btn"
-          onclick="copyToClipboard(this)"></button>
+          onclick="copyToClipboard(this)"
+        ></button>
         <pre><code>let age = prompt("Enter your age");
 age >= 18
   ? console.log("You can drive")
